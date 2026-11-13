@@ -106,6 +106,9 @@ project/
 │   ├── filtered_goa_uniprot_all_noiea.gaf.gz  # GOA 注释，含逐条注释日期
 │   ├── goa_arabidopsis.gaf.gz     # 拟南芥注释
 │   └── GWHBJBL00000000.Protein.faa.gz          # 苦荞蛋白组 34 045 条（Pinku1 装配，CNCB-NGDC GWH，下载 2026-07-17）
+├── splits/
+│   └── partitions.tsv.gz          # 六个集合的 accession 名单（58 794 行，176 KB），由
+│                                  #   scripts/export_partition_manifest.py 从 data/partitions/ 导出
 ├── data/
 │   ├── partitions/                # split1/2/3、library.fasta、拟南芥库侧与验证集 FASTA
 │   ├── annotations/               # split1_go.tsv（库 GO 映射）与各集合真值 TSV
@@ -209,6 +212,15 @@ T2 = 2025-06-18；库侧注释一律 ≤T0，真值按各自窗口断开。证�
 
 拟南芥全池 12 112 条中 8 505 条在库侧、3 607 条作查询，两者按蛋白 ID 哈希互斥，
 查询序列绝不出现在自己的比对库里。
+
+上表的集合规模与互斥性不需要重跑流水线即可核对：`splits/partitions.tsv.gz` 是六个集合的
+accession 名单（`set`、`accession` 两列，58 794 行），由 `scripts/export_partition_manifest.py`
+从步骤 1 的产物 `data/partitions/*.fasta` 导出（那批 FASTA 属原始下载物的派生物，不入版本库，
+名单入的是这份压缩结果）。实测三件事：各集合行数与上表逐一对应且 (set, accession) 无重复；
+split1/split2/split3 两两交集为 0，`arabidopsis_lib` 与 `arabidopsis_val` 交集为 0；
+`library` 恰为 `split1 ∪ arabidopsis_lib`（25 453 = 16 948 + 8 505），库侧与 split3 查询的交集为 0。
+名单本身由注释日期与证据码白名单决定，逐条日期仍要按补充表 S1 的访问路径取回 GAF 后用
+`src/data_prep.py` 复核。
 
 评估口径：预测与真值都先沿 `is_a`/`part_of` 传播再阈值化（先传播后阈值），剔除三个
 子本体根术语；Fmax/Smin/AUPR 为蛋白中心微平均，阈值网格 0.00–1.00 步长 0.01 共 101 点；
