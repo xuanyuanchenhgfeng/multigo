@@ -1,0 +1,13 @@
+# 运行本管线所需的全部第三方依赖（作者实测通过的版本）
+# 标准库之外只有这四个：仲裁层的学习式打分用 numpy 手写带回溯阻尼的 Newton/IRLS 求解，
+# 不依赖 scikit-learn；统计量全部用 statistics/math 计算，不依赖 scipy。
+numpy==2.5.3
+matplotlib==3.11.2
+requests==2.31.0
+PyYAML==6.0.1
+
+# 解释器：Python 3.12.3（CPython）
+# 外部比对工具不属于 pip 依赖，版本随稿写明：
+#   DIAMOND 2.1.10；InterProScan 5.72-103.0（数据发布 2024-11-28，严格口径只保留
+#   版本串自带日期码不晚于 T0 的成员库，见 results/revision/struct_library_audit.json）；
+#   MMseqs2 17.0b728ee（仅用于早期对照，主协议不经过它）

@@ -36,3 +36,6 @@ __pycache__/
 /work/revision/*
 !/work/revision/lit_spotcheck_sample_strict.tsv
 !/work/revision/lit_spotcheck_sample.tsv
+
+# 绘图脚本的输出落在脚本目录，PNG 随稿提交、不入版本库
+/figures/*.png
