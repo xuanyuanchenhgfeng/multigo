@@ -6,6 +6,10 @@ matplotlib==3.11.2
 requests==2.31.0
 PyYAML==6.0.1
 
+# 可选：python-docx 只被 scripts/check_manuscript_numbers.py 末段用来比对 docx 正文数字，
+# 没装则跳过该段（其余核对照常），管线产物不依赖它。matplotlib 只服务 figures/。
+# python-docx==1.2.0
+
 # 解释器：Python 3.12.3（CPython）
 # 外部比对工具不属于 pip 依赖，版本随稿写明：
 #   DIAMOND 2.1.10；InterProScan 5.72-103.0（数据发布 2024-11-28，严格口径只保留

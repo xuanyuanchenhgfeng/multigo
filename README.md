@@ -12,12 +12,13 @@
 数字的工程现场，两者的协议参数必须一致；本文以下所有数字取自 `results/revision/*.json`。
 `../Materials/` 这个相对路径只在作者的本地工程目录里成立：克隆本仓库时不会带上稿件与补充材料，
 它们随投稿系统提交。克隆下来能独立做到的是——`python3 scripts/make_supplementary_tables.py`
-只读 `results/revision/*.json` 与 `work/revision/lit_spotcheck_sample_strict.tsv`，重渲染出正文
-表 2–6 与全部补充表的数值（437 行），可与稿件逐格对照；`scripts/check_manuscript_numbers.py`
+只读 `results/revision/*.json` 与 `work/revision/lit_spotcheck_sample_strict.tsv`，重渲染出补充表
+S3、S4、S17–S24 十节（437 行，正文表 2、表 3、表 5 的数值都在其中），可与稿件逐格对照；
+`scripts/check_manuscript_numbers.py`
 做的是同一件事的自动逐字比对，但它要读稿件文本，在作者本地工程目录里直接跑，公开克隆需按
 提示用 `MULTIGO_MANUSCRIPT` 指向随稿提交的 `manuscript.md`。`figures/` 下的绘图脚本同样不重算
 指标，纯净克隆里重绘的图 1–图 4 与补充图 S2–S4 共七个 PNG 与随稿提交的那批逐字节相同
-（md5 核对，见 §8）。原始下载物（UniProt、GO、GOA、
+（MD5 核对，见 §4 末）。原始下载物（UniProt、GO、GOA、
 TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、全量注释表与逐蛋白审计流不入
 版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
 本仓库以 MIT 许可发布，见 `LICENSE`。投稿快照打为标签 `v1.0`，87 MB 的通道输出与苦荞全蛋白组
@@ -82,7 +83,7 @@ score = 0.40 * seq_conf + 0.35 * struct_conf + 0.25 * lit_conf
 | 快照外/非法术语 | 过滤并计数 |
 | 三通道均低置信 | 标记"功能未知"，不强行预测 |
 
-两种仲裁打分模式：上面的公式是**规则路线**（正文主表口径）。`src/arbiter.py` 另留了一个
+两种仲裁打分模式：上面的公式是**规则路线**（正文表 2 的对照臂）。`src/arbiter.py` 另留了一个
 可插拔钩子 `Arbiter.scorer`，缺省为 `None`（走上式的固定权重求和）；挂上
 签名为 `(ev, go) -> float` 的回调后，它取代 `score()` 里的加权求和与可选的分本体权重，
 而候选合并、祖-父折叠、分支冲突记录、`min_score`、每蛋白 15 术语上限、DAG 合法性校验与
@@ -138,12 +139,15 @@ project/
 │   ├── struct_library_audit.py    # 结构通道签名库时间审计（见 §8.2）
 │   ├── lit_source_spotcheck.py    # 文献通道证据链复原与抽检（见 §8.2）
 │   └── seq_channel_dbcheck.py     # 检索库对照校验（见 §7）
-├── results/revision/              # 指标 JSON：正文与补充材料引用的那批，加 §8.2 第二轮新增的
+├── results/revision/              # 指标 JSON：正文与补充材料引用的那批，§8.2 第二轮新增的
 │                                  #   8 份（arbiter_model / learn_eval / bootstrap_learn /
 │                                  #   source_precision / struct_library_audit / lit_spotcheck /
-│                                  #   power_analysis / operating_point）；另有一份被
+│                                  #   power_analysis / operating_point）与 §8.3 第三轮严格口径
+│                                  #   新增的 7 份（strict_eval / strict_mech / litonly_ci /
+│                                  #   eval_cross_species_learn / power_analysis_strict /
+│                                  #   operating_point_strict / lit_spotcheck_strict）；另有一份被
 │                                  #   audit_stats.json 取代的旧冲突统计，已改名留档
-├── figures/                       # 正文图 1–图 4 与补充图 S2–S5 的渲染脚本（见 §8 末）
+├── figures/                       # 正文图 1–图 4 与补充图 S2–S5 的渲染脚本（见 §4 末）
 ├── work/                          # 通道中间产物、仲裁预测 TSV、审计日志
 ├── cache/pubmed_cache.sqlite      # PubMed 检索与摘要缓存，557 MB
 └── config_revision.yaml           # 修订版协议配置（正文数字全部出自这套配置）
@@ -157,7 +161,7 @@ project/
 | 项 | 版本 | 说明 |
 |---|---|---|
 | 系统 | Linux x86_64，内核 6.8.0-124-generic | |
-| Python | 3.12.3 | `pip install -r requirements.txt` 装齐四个第三方依赖（PyYAML、requests、numpy、matplotlib，作者实测版本逐条钉在该文件里）；学习式仲裁与重采样只用 numpy 自带的线性代数，不引入 sklearn |
+| Python | 3.12.3 | `pip install -r requirements.txt` 装齐四个必需第三方依赖（PyYAML、requests、numpy、matplotlib，作者实测版本逐条钉在该文件里），另有一个只服务核对脚本的可选 python-docx；学习式仲裁与重采样只用 numpy 自带的线性代数，不引入 sklearn |
 | DIAMOND | 2.1.10 | `/home/zsl/tools/diamond/diamond` |
 | InterProScan | 5.72-103.0 | 本机 `local` 模式部署 |
 | Java | OpenJDK 11.0.2 | 每进程 12 GB 堆、4 线程 |
@@ -179,7 +183,7 @@ env -u LD_LIBRARY_PATH python3 -X utf8 scripts/run_train_val.py --config config_
 env -u LD_LIBRARY_PATH python3 -X utf8 scripts/run_train_val.py --config config_revision.yaml --skip-prep
 ```
 
-之后是分析与评估脚本，完整顺序（14 步）与每步依赖见补充说明 S7。最短的复现链路是
+之后是分析与评估脚本，完整顺序（21 步）与每步依赖见补充说明 S7。最短的复现链路是
 步骤 1–2 之后依次跑 `revision_evaluate.py`、`revision_bootstrap.py`、`baseline_transfer.py`、
 `revision_17lib.py`。步骤 1–2 不访问任何公开数据库；文献通道只在缓存未命中时才发请求。
 学习式仲裁路线（§8.2）在这四步之后跑 `scripts/revision_learning.py`，第二轮的其余四项分析
@@ -237,7 +241,27 @@ Smin 的信息内容只由训练库真值统计（`ic_source: train_only`），�
 
 ## 6. 主要结果
 
-测试集整体口径（n = 1 130，`results/revision/eval_summary.json` 与 `bootstrap_ci.json`）：
+正文主口径是严格时间完整配置（结构通道只保留版本串自带不晚于 T0 日期码的四个签名库），
+主指标是验证窗 1-SE 规则选出并冻结到测试窗的 F1，出处为 `strict_eval.json`、`litonly_ci.json`、
+`bootstrap_learn.json`、`strict_mech.json` 与 `eval_cross_species_learn.json`：
+
+| 路线（测试窗 1 130 个可评估蛋白） | 冻结 F1 | 网格 Fmax（oracle 上界） | AUPR | Smin |
+|---|---:|---:|---:|---:|
+| 学习仲裁 | 0.4048 | 0.5323 | 0.428 | 7.63 |
+| 规则仲裁 | 0.3475 | 0.3496 | 0.205 | 8.17 |
+| 最近邻 Top1 | 0.4161 | — | — | — |
+| 朴素并集 | 0.3557 | — | — | — |
+| 学习仲裁，文献单源行改为线索交付 | 0.4441 | — | — | — |
+
+配对差（B = 2 000 蛋白级配对自助）：学习 − 规则 +0.0575（0.0376–0.0783）；规则 − 朴素并集
+−0.0081（−0.0219–+0.0054）跨零；学习 − Top1 −0.0112（−0.0333–+0.0108）跨零，把文献单源行另档
+交付后转为 +0.0281（0.0067–0.0494）。发射概率的 ECE 由 0.247 降到 0.081。两项退化同时报告：
+学习仲裁在其全局冻结阈值下不输出任何 BPO 术语（规则仲裁同一点为 0.2877），放开该闸门要付出
+整体 F1 −0.0841；系数与工作点冻结到拟南芥后 Fmax 0.362 低于规则仲裁的 0.443。正文结论因此落在
+"可部署性能由仲裁层的打分方式与低质量证据的交付口径决定，而不是加权系数本身"。
+
+下面的表是全量签名库上界口径（第一轮，规则路线、以网格 Fmax 为主指标），只作上界参照，
+不是正文数字（出处 `eval_summary.json` 与 `bootstrap_ci.json`）：
 
 | 方法 | Fmax | Smin | AUPR | AUC |
 |---|---:|---:|---:|---:|
@@ -254,14 +278,15 @@ Smin 的信息内容只由训练库真值统计（`ic_source: train_only`），�
 seq+struct 为 +0.0088（0.0035, 0.0152），相对 InterPro 为 +0.0084（−0.0063, +0.0223）跨零，
 相对 Union 为 −0.0094（−0.0290, +0.0110）跨零。三者在 Fmax 上统计不可区分，融合模型的
 显著优势在 AUPR（对 InterPro +0.1154、对 Union +0.0459）与 Smin（−0.28、−0.55）。
-完整区间与逐本体、逐设置的数字见正文表 2–8 与补充表 S3–S6、S9。
+完整区间与逐本体、逐设置的数字见正文表 1–6 与补充表 S3–S6、S9–S11、S17–S24。
 
-上表全部是规则路线（固定权重 0.40/0.35/0.25）的口径。学习式路线在同一决策语义下的
-对照——含候选级 logistic 仲裁、Vote-≥2 规则基线、共同覆盖子集重算与分证据来源精度——
-由 `scripts/revision_learning.py` 产出，落在 `results/revision/learn_eval.json` 与
-`results/revision/bootstrap_learn.json`，见 §8.2。
+上面两表都属第一轮与第二轮的全量口径叙述，正文现行数字一律以严格时间完整配置为准
+（§8.3）：主指标换成冻结 F1，`eval_summary.json` 那批 Fmax 降为 oracle 上界参照。学习式路线
+在同一决策语义下的对照——含候选级 logistic 仲裁、Vote-≥2 规则基线、共同覆盖子集重算与
+分证据来源精度——由 `scripts/revision_learning.py` 产出，落在 `results/revision/learn_eval.json`
+与 `results/revision/bootstrap_learn.json`，见 §8.2。
 
-一句话结论：结构签名贡献 Fmax 的绝大部分增益，文献证据只在序列与结构两路都已给出
+上界口径下的一句话结论：结构签名贡献 Fmax 的绝大部分增益，文献证据只在序列与结构两路都已给出
 候选时才改善点值（17 库配置下这一增量缩到 +0.003 且不再显著），仲裁层的价值体现在
 排序质量与语义距离，而不是 Fmax 本身。
 
@@ -298,6 +323,10 @@ seq_channel:
 ## 8. 脚本分类
 
 ### 8.1 第一轮：正文与补充材料的口径来源
+
+下面两小节表内的"支撑"列按第一轮与第二轮当时的正文编号书写（表 7、表 8、图 5 等），
+现行编号为正文表 1–6、图 1–4、补充表 S1–S24 与补充图 S1–S5，逐文件对应关系以随稿
+代码交付包 `代码/README.md` 的脚本分类表为准。
 
 `config_revision.yaml` + `revision_*` 系列是正文与补充材料的口径来源：
 
@@ -423,6 +452,32 @@ L2 正则 logistic 回归，求解器为 numpy 写的带回溯阻尼 Newton/IRLS
    整体与分命名空间都给 P/R/F1/覆盖蛋白数，并在同一 gate 约定内做四条配对比较
    （B = 2000，种子 20261104）。口径声明随产物落盘：本脚本一律"筛选后传播"（gate 规则），
    主表是"传播后阈值"（t* 规则，见 `bootstrap_learn.json`），两套部署约定数值不可互比。
+
+### 8.3 第三轮（2026-11-12）：严格时间完整配置成为正文主口径
+
+回应结构通道签名库快照整体晚于知识截止（InterProScan 5.72-103.0，数据发布 2024-11-28，
+晚 T0 386 d）这一事实：正文表 2–6、摘要与结论改用只保留版本串自带不晚于 T0 日期码四个
+签名库的严格配置，全量库降为上界参照。五个脚本按依赖顺序为
+
+1. `revision_strict.py`：从 `struct_library_audit.json` 取实测的 pre-T0 库清单，把结构通道
+   限制到这四个库，在受限后的验证窗重新标定每条路线，九条路线的严格口径指标写
+   `strict_eval.json`；中间预测与审计落 `work/revision/preds/_strict/`，文献单源消融臂在其
+   `litonly/` 子目录。
+2. `revision_strict_mech.py`：同口径的机理解释量（共同覆盖子集、发射类别数、ECE 与可靠度表、
+   模型系数、图 4 左中面板用的验证窗 F1-阈值曲线与两个选点）写 `strict_mech.json`。
+3. `revision_litonly_ci.py`：交付消融臂的冻结 F1 区间及其对最近邻 Top1、规则仲裁、学习仲裁的
+   配对差写 `litonly_ci.json`（表 2 第 9 行、表 5 下半）。
+4. `revision_cross_species_learn.py`：真跨物种压力测试的学习臂，系数、分数下限与 t* 全取
+   主协议验证窗的冻结值，拟南芥侧不重新拟合，写 `eval_cross_species_learn.json`（表 6）。
+5. `check_manuscript_numbers.py`：只读核对，把正文表 2–6 与 2.2、2.4–2.7 节每个数字按产物
+   JSON 重新格式化后逐字比对，全部一致时打印"发现 0 处问题"并退出码 0，任何一位小数
+   不一致即列出并返回非零退出码；末尾另查 docx 是否已跟进本次 md 改动。
+
+`revision_power.py`、`revision_operating_point.py` 与 `lit_source_spotcheck.py` 靠
+`MULTIGO_CONFIG=strict` 切到同一口径，改写带 `_strict` 后缀的产物名（`power_analysis_strict.json`、
+`operating_point_strict.json`、`lit_spotcheck_strict.json`）；绘图脚本靠 `FIG_CONFIG=strict` 读同一批
+严格口径 JSON（§4 末）。正文数字与仓库产物之间的对应关系另见 `代码/README.md` 与
+`数据/README.md` 的"第三轮产物对应"。
 
 ---
 
