@@ -15,7 +15,9 @@
 （`python3 scripts/check_manuscript_numbers.py`，只读核对，全部一致时退出码 0）。
 原始下载物（UniProt、GO、GOA、TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、
 全量注释表与逐蛋白审计流不入版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
-本仓库以 MIT 许可发布，见 `LICENSE`。
+本仓库以 MIT 许可发布，见 `LICENSE`。投稿快照打为标签 `v1.0`，87 MB 的通道输出与苦荞全蛋白组
+注释以该标签的 Release 附件 `multigo_data_v1.0.tar.gz`（8.5 MB，SHA-256 见 Release 说明）提供。
+仓库地址：https://github.com/xuanyuanchenhgfeng/multigo
 
 ---
 
