@@ -1,0 +1,63 @@
+{
+  "sprot_total": 575503,
+  "gaf_proteins": 63335,
+  "gaf_in_sprot": 50558,
+  "evidence_codes": [
+    "EXP",
+    "HDA",
+    "HEP",
+    "HGI",
+    "HMP",
+    "HTP",
+    "IC",
+    "IDA",
+    "IEP",
+    "IGI",
+    "IMP",
+    "IPI",
+    "TAS"
+  ],
+  "train_end": "20231108",
+  "val_end": "20241127",
+  "test_end": "20250618",
+  "split1_training": 16948,
+  "split2_validation": 3122,
+  "split3_testing": 1159,
+  "excluded_after_test_end": 2042,
+  "arabidopsis_pool": 12112,
+  "arabidopsis_library": 8505,
+  "arabidopsis_validation": 3607,
+  "split1_fasta": 16948,
+  "split2_fasta": 3122,
+  "split3_fasta": 1159,
+  "arabidopsis_lib_fasta": 8505,
+  "arabidopsis_val_fasta": 3607,
+  "library_go_lines": 99986,
+  "truth2_lines": 6869,
+  "truth3_lines": 2076,
+  "arabidopsis_go_lines": 27346,
+  "metadata_rows": 7888,
+  "psb26_table1": {
+    "MFO": {
+      "terms": 3899,
+      "proteins": 15890,
+      "training": 13485,
+      "validation": 2030,
+      "testing": 375
+    },
+    "BPO": {
+      "terms": 4692,
+      "proteins": 14401,
+      "training": 13912,
+      "validation": 260,
+      "testing": 229
+    },
+    "CCO": {
+      "terms": 848,
+      "proteins": 17512,
+      "training": 15322,
+      "validation": 1418,
+      "testing": 772
+    }
+  }
+}

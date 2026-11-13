@@ -1,0 +1,163 @@
+# ============================================================================
+# 并行多Channel蛋白质功能注释系统 - 全局配置
+# 所有路径相对于项目根目录（本文件所在目录）
+# ============================================================================
+
+# ---------- 原始数据集（已下载） ----------
+paths:
+  raw_data_dir: "数据集"
+  sprot_fasta: "数据集/uniprot_sprot.fasta.gz"          # Swiss-Prot 序列
+  sprot_dat: "数据集/uniprot_sprot.dat.gz"              # Swiss-Prot 完整注释（元数据）
+  go_obo: "数据集/go-basic-2023-10-09.obo"                # GO 本体（2023-10-09 快照，≤知识截止）
+  goa_all_noiea: "数据集/filtered_goa_uniprot_all_noiea.gaf.gz"  # GO注释（无IEA，含日期）
+  goa_arabidopsis: "数据集/goa_arabidopsis.gaf.gz"      # 拟南芥GO注释
+  tartary_faa: "数据集/GWHBJBL00000000.Protein.faa.gz"  # 苦荞蛋白组
+
+  # ---------- 派生数据 ----------
+  partitions_dir: "data/partitions"      # 划分1/2/3 + 拟南芥 FASTA
+  annotations_dir: "data/annotations"   # 各划分的GO注释（库映射 / 真值）
+  meta_dir: "data/meta"                  # Swiss-Prot 元数据（基因名/物种/文献）
+  mmseqs_db: "data/mmseqs_db/sprot_library"    # Seq-Channel 比对库（split1+拟南芥库侧70%）
+  work_dir: "work"                       # 各Channel中间结果
+  results_dir: "results"                 # 最终报告与注释文件
+  cache_dir: "cache"                     # PubMed SQLite 缓存
+  log_dir: "logs"
+
+# ---------- 外部工具 ----------
+tools:
+  # 比对器优先级：DIAMOND(--sensitive) -> MMseqs2 -> BLAST+
+  diamond: "/home/zsl/tools/diamond/diamond"
+  # MMseqs2 可执行入口（Linux 版，用户目录下；DIAMOND 失败时降级）
+  mmseqs: "/home/zsl/tools/mmseqs/bin/mmseqs"
+  blastp: ""                             # BLAST+ blastp 可执行路径（备用比对器）
+  makeblastdb: ""
+  # InterProScan：当前为 Linux 环境，使用本机部署的 InterProScan 5.72-103.0
+  #   mode: local        - 本地运行 interproscan.sh
+  #         precomputed  - 直接解析已有的 InterProScan 输出 TSV
+  #         ssh          - 远程服务器模式
+  #         api          - 使用 EBI InterProScan REST API（无需本地安装，需网络）
+  #         skip         - 跳过 Struct-Channel（流水线继续，仅2个Channel）
+  interproscan_mode: "local"
+  interproscan: "/home/zsl/tools/interproscan/interproscan.sh"
+  java: "/home/zsl/tools/jdk-11.0.2/bin/java"
+
+# ---------- 数据划分（PSB26 时间基三段式切割） ----------
+# 对齐 PSB26 (Pacific Symposium on Biocomputing 2026) 的 CAFA 时间基评估协议：
+#   训练=Swiss-Prot v2023_05 (2023-11-08)，验证=v2024_06 (2024-11-27)，测试=v2025_03 (2025-06-18)
+# 本项目以 GAF 注释日期近似各版本发布日期的"新蛋白"边界（无逐版本快照）：
+#   划分1（训练库）  = 首次实验性注释 <= train_end          （模拟 v2023_05 知识截止）
+#   划分2（验证集）  = 首次实验性注释 ∈ (train_end, val_end] （对应 v2024_06 新蛋白）
+#   划分3（测试集）  = 首次实验性注释 ∈ (val_end, test_end]  （对应 v2025_03 新蛋白）
+#   更晚注释的蛋白整体剔除（对齐 PSB26 不含 v2025_03 之后蛋白）
+split:
+  train_end: "20231108"       # 训练知识截止（对应 Swiss-Prot v2023_05 发布日）
+  val_end: "20241127"         # 验证窗上界（对应 v2024_06 发布日）
+  test_end: "20250618"        # 测试窗上界（对应 v2025_03 发布日）
+  # PSB26 实验性/人工审核证据码白名单（真值与库映射一律以此过滤）
+  evidence_codes: [EXP, IDA, IPI, IMP, IGI, IEP, TAS, IC, HTP, HDA, HMP, HGI, HEP]
+  # 库GO映射只采用 <= train_end 的注释（严格模拟知识截止，防未来信息泄漏）
+  library_annotation_cutoff: "20231108"
+  # 拟南芥子集：Swiss-Prot ∩ goa_arabidopsis，含>=1条白名单证据码注释
+  # 70/30 划分用 MD5(蛋白ID+盐) 确定性哈希（可复现）；30% 验证集做近缘跨物种验证
+  arabidopsis_taxid: "3702"
+  train_ratio: 0.70
+  split_seed_salt: "go-agent-split-v1"
+
+# ---------- GO-DAG ----------
+go_dag:
+  relations: ["is_a", "part_of"]   # 传播/冗余判定所用的关系类型
+
+# ---------- Channel 1: Seq-Channel（MMseqs2 序列同源） ----------
+seq_channel:
+  evalue: 1.0e-3          # 检索 E-value 阈值
+  min_identity: 0.25      # 最低序列一致性
+  min_qcov: 0.50          # 最低查询覆盖度
+  top_hits: 5             # 每条蛋白最多取前N个同源命中做GO转移
+  # 检索库按查询集指定：[库 FASTA（相对 partitions_dir）, DIAMOND 索引前缀（相对 diamond_db）]
+  # 验证/测试查询不得检索拟南芥库侧序列；用错库会挤占 top-5 与 --max-target-seqs 名额。
+  # tartary 一行只在本配置下跑苦荞时生效；交付的苦荞产物用的是 config.yaml 的缺省回落
+  # （library.fasta + sprot_library 复合索引 36 941 条），口径与正文不同，见补充表 S12。
+  db_by_set:
+    split2_val:  ["split1.fasta",  "split1_revision"]
+    split3_test: ["split1.fasta",  "split1_revision"]
+    arabidopsis: ["library.fasta", "library_revision"]
+    tartary:     ["library.fasta", "library_revision"]
+  threads: 8
+  # E-value -> 置信度归一化：seq_conf = min(-log10(E), evalue_logcap) / evalue_logcap
+  evalue_logcap: 10.0     # E<=1e-10 即视为满置信
+
+# ---------- Channel 2: Struct-Channel（InterProScan 结构域） ----------
+struct_channel:
+  batch_size: 500         # 每批处理条数（内存约束）
+  threads: 4              # 每个InterProScan进程线程数（保持文档约束：4线程/12GB）
+  parallel_batches: 12    # 同时并行运行的批次数（=独立InterProScan进程数；本机128核/995GB）
+                          # 总占用 ≈ parallel_batches×threads 核、parallel_batches×12GB 内存；
+                          # 单进程内加线程几乎不提速，多进程并行才有线性加速（结果确定性不变）
+  max_heap: "12G"         # InterProScan JVM 堆内存（约束：12GB）
+  # 稳定应用集（硬约束）：排除 PANTHER(epang)/ProSiteProfiles/Hamap(pfsearchV3)/
+  # Gene3D/FunFam(cath-funfam) 五类会触发原生二进制段错误的应用，及 MobiDBLite。
+  # 若仍有个别批次崩溃，项目记忆推荐的最小稳定集为 Pfam+CDD+SMART+SUPERFAMILY。
+  applications: "AntiFam,CDD,Coils,NCBIfam,Pfam,PIRSF,PIRSR,PRINTS,ProSitePatterns,SFLD,SMART,SUPERFAMILY"
+  # 域匹配覆盖率 -> 置信度：struct_conf = min(域匹配长度/蛋白长度, 1)
+  min_coverage: 0.20      # 低于该覆盖率的域匹配GO不计入候选
+  # ---- api 模式专用（interproscan_mode: "api" 时生效）----
+  api_workers: 4          # API 并发请求线程数
+  api_rate_limit: 2.0     # 每秒最多 API 请求数
+  # ---- ssh 模式专用（interproscan_mode: "ssh" 时生效）----
+  ssh:
+    host: "user@192.168.1.100"   # 服务器 用户@IP（需先配置SSH免密登录）
+    port: 22                     # SSH端口
+    remote_dir: "~/ips_jobs"     # 远程工作目录（自动创建；保留TSV支持断点续跑）
+    ssh_key: ""                  # 私钥路径；留空=默认 ~/.ssh/id_rsa
+    keep_remote: true            # false=完成后清理远程 batches/tmp（tsv保留）
+
+# ---------- Channel 3: Lit-Channel（PubMed 文献证据） ----------
+lit_channel:
+  enabled: true
+  rate_limit_interval: 0.34     # 3次/秒 => 每次请求间隔 >= 0.34s
+  max_abstracts: 20             # 每蛋白最多取回文献摘要数
+  go_dict_min_words: 2          # GO词典：术语名至少N个单词才用于文本匹配（滤除过泛词）
+  go_dict_source: "library"     # GO词典来源: library=划分1库注释中出现过的GO
+  pub_date_cutoff: "2023/11/08" # 文献知识截止：仅纳入出版日期≤2023-11-08 的 PubMed 文献
+  # 引用数 -> 置信度归一化：lit_conf = min(log(citations+1), logcap) / logcap
+  citation_logcap: 5.0          # log(100+1)≈4.6，100次引用即近满置信
+  timeout: 30                   # 单请求超时(秒)
+  max_retries: 2
+
+# ---------- Arbiter（显式规则仲裁） ----------
+arbiter:
+  # 加权评分（归一化后）: score = w_seq*seq_conf + w_struct*struct_conf + w_lit*lit_conf
+  weights:
+    seq: 0.40
+    struct: 0.35
+    lit: 0.25
+  min_score: 0.15            # 输出候选的最低总分
+  max_terms_per_protein: 15  # 每蛋白最多输出GO数（按分数排序截断）
+  # "功能未知"判定：三Channel各自低于以下置信且无任何候选过线 => 标记 unknown
+  low_conf:
+    seq: 0.20
+    struct: 0.20
+    lit: 0.20
+
+# ---------- 评估（PSB26 / CAFA 四指标） ----------
+evaluation:
+  propagate_terms: true     # 评估时沿 is_a/part_of 传播（CAFA/PSB26标准）
+  # 指标 = Fmax / Smin / AUPR / AUC（阈值网格 0.00-1.00 步长0.01，与 PSB26 一致）
+  #   Smin 的信息内容 IC=log2(min直接父计数/项计数)
+  #   ic_source: train_only=仅由训练库真值统计（不接触评估真值，防指标泄漏，修订版口径）
+  #              train_eval=训练库+评估真值（旧口径，仅用于敏感性对照）
+  #   AUC 为类中心指标：逐GO类 ROC AUC 对">=1正例且>=1负例"的类取平均
+  ic_source: "train_only"
+  exclude_iea_truth: true   # 真值排除IEA证据（拟南芥评估）
+
+# ---------- 输出 ----------
+output:
+  gaf_evidence_code: "RCA"        # GAF证据码（RCA=reviewed computational analysis）
+  assigned_by: "MultiChannelArbiter"
+  db_name: "UniProtKB"            # 苦荞输出时覆盖为 GWH
+
+# ---------- 运行控制 ----------
+runtime:
+  demo_sample_size: 0          # 0=全量运行
+  force_rerun: false           # true则忽略已有中间文件强制重跑
+  log_level: "INFO"

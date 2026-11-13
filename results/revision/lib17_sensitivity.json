@@ -1,0 +1,30 @@
+{
+  "interpro17": {
+    "fmax": 0.4437,
+    "smin": 8.0635,
+    "aupr": 0.1926,
+    "auc": 0.6375,
+    "coverage": 0.746
+  },
+  "union17": {
+    "fmax": 0.4512,
+    "smin": 8.237,
+    "aupr": 0.2439,
+    "auc": 0.6915,
+    "coverage": 0.8513
+  },
+  "fusion17": {
+    "fmax": 0.4422,
+    "smin": 7.7437,
+    "aupr": 0.2963,
+    "auc": 0.7009,
+    "coverage": 0.8159
+  },
+  "seq+struct17": {
+    "fmax": 0.4395,
+    "smin": 7.7896,
+    "aupr": 0.2777,
+    "auc": 0.7003,
+    "coverage": 0.8133
+  }
+}

@@ -1,0 +1,1651 @@
+{
+  "T0": "2023-11-08",
+  "interproscan_releases_used": [
+    "5.72-103.0"
+  ],
+  "release_dates": {
+    "5.72-103.0": "2024-11-28"
+  },
+  "last_release_not_later_than_T0": "5.64-96.0",
+  "gap_days_after_T0": 386,
+  "gap_n_releases_after_T0": 8,
+  "per_target_set_xml": {
+    "split2_train": {
+      "n_xml_files": 35,
+      "n_proteins_in_xml": 17140,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 26919,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 25840,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 22660,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 20807,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 13791,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 12860,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 12324,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 11774,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 7309,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 5356,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 4982,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 4011,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 3604,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 2769,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 1527,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 815,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        }
+      }
+    },
+    "split3_val": {
+      "n_xml_files": 15,
+      "n_proteins_in_xml": 7414,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 11814,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 11506,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 9954,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 9210,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 6154,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 5521,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 5408,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 5317,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 3295,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 2411,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 2298,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 1769,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 1545,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 1171,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 665,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 367,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        }
+      }
+    },
+    "split3_test": {
+      "n_xml_files": 6,
+      "n_proteins_in_xml": 2294,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 2842,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 2388,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 2378,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 1462,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 1340,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 1158,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 660,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 628,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 564,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 509,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 369,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 280,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 218,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 194,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 110,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 79,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        }
+      }
+    },
+    "gap_split2_val": {
+      "n_xml_files": 7,
+      "n_proteins_in_xml": 3108,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 5003,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 4525,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 3904,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 1904,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 1430,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 1046,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 918,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 906,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 630,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 461,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 280,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        }
+      }
+    },
+    "gap_split3_test": {
+      "n_xml_files": 1,
+      "n_proteins_in_xml": 309,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 252,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 239,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 181,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 105,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 78,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 72,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 70,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 61,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 46,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 44,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 42,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 32,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 19,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 8,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 5,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        }
+      }
+    },
+    "arabidopsis": {
+      "n_xml_files": 26,
+      "n_proteins_in_xml": 12772,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 39890,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 19068,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 13947,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 12287,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 9898,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 8500,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 8367,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 8174,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 6538,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 4681,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 3616,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 2788,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 2149,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 1017,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 454,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 288,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        }
+      }
+    },
+    "tartary": {
+      "n_xml_files": 69,
+      "n_proteins_in_xml": 33945,
+      "interproscan_versions": [
+        "5.72-103.0"
+      ],
+      "release_dates": {
+        "5.72-103.0": "2024-11-28"
+      },
+      "libraries": {
+        "PIRSR": {
+          "version": "2023_05",
+          "n_matches": 74940,
+          "xml_spelling": [
+            "PIRSR"
+          ]
+        },
+        "PFAM": {
+          "version": "37.1",
+          "n_matches": 32354,
+          "xml_spelling": [
+            "PFAM"
+          ]
+        },
+        "GENE3D": {
+          "version": "4.3.0",
+          "n_matches": 29488,
+          "xml_spelling": [
+            "GENE3D"
+          ]
+        },
+        "SUPERFAMILY": {
+          "version": "1.75",
+          "n_matches": 25889,
+          "xml_spelling": [
+            "SUPERFAMILY"
+          ]
+        },
+        "PANTHER": {
+          "version": "19.0",
+          "n_matches": 21857,
+          "xml_spelling": [
+            "PANTHER"
+          ]
+        },
+        "PROSITEPROFILES": {
+          "version": "2023_05",
+          "n_matches": 16479,
+          "xml_spelling": [
+            "PROSITE_PROFILES"
+          ]
+        },
+        "FUNFAM": {
+          "version": "4.3.0",
+          "n_matches": 16269,
+          "xml_spelling": [
+            "FUNFAM"
+          ]
+        },
+        "CDD": {
+          "version": "3.20",
+          "n_matches": 12790,
+          "xml_spelling": [
+            "CDD"
+          ]
+        },
+        "SMART": {
+          "version": "9.0",
+          "n_matches": 10843,
+          "xml_spelling": [
+            "SMART"
+          ]
+        },
+        "PROSITEPATTERNS": {
+          "version": "2023_05",
+          "n_matches": 7669,
+          "xml_spelling": [
+            "PROSITE_PATTERNS"
+          ]
+        },
+        "COILS": {
+          "version": "2.2.1",
+          "n_matches": 6791,
+          "xml_spelling": [
+            "COILS"
+          ]
+        },
+        "PRINTS": {
+          "version": "42.0",
+          "n_matches": 4713,
+          "xml_spelling": [
+            "PRINTS"
+          ]
+        },
+        "NCBIFAM": {
+          "version": "15.0",
+          "n_matches": 3249,
+          "xml_spelling": [
+            "NCBIFAM"
+          ]
+        },
+        "PIRSF": {
+          "version": "3.10",
+          "n_matches": 1470,
+          "xml_spelling": [
+            "PIRSF"
+          ]
+        },
+        "HAMAP": {
+          "version": "2023_05",
+          "n_matches": 835,
+          "xml_spelling": [
+            "HAMAP"
+          ]
+        },
+        "SFLD": {
+          "version": "4",
+          "n_matches": 505,
+          "xml_spelling": [
+            "SFLD"
+          ]
+        },
+        "ANTIFAM": {
+          "version": "7.0",
+          "n_matches": 47,
+          "xml_spelling": [
+            "ANTIFAM"
+          ]
+        }
+      }
+    }
+  },
+  "per_target_set_tsv": {
+    "split2_train": {
+      "n_rows": 58036,
+      "n_proteins": 13938,
+      "rows_by_library": {
+        "PANTHER": 28716,
+        "PIRSF": 7327,
+        "PFAM": 6381,
+        "PROSITEPROFILES": 3411,
+        "NCBIFAM": 3125,
+        "SUPERFAMILY": 2534,
+        "GENE3D": 2097,
+        "HAMAP": 1663,
+        "SMART": 1354,
+        "CDD": 1145,
+        "PRINTS": 123,
+        "SFLD": 92,
+        "PROSITEPATTERNS": 68
+      },
+      "proteins_by_library": {
+        "PANTHER": 9303,
+        "PFAM": 3680,
+        "PROSITEPROFILES": 2514,
+        "PIRSF": 2815,
+        "GENE3D": 1252,
+        "SMART": 827,
+        "NCBIFAM": 1381,
+        "CDD": 706,
+        "SUPERFAMILY": 2180,
+        "SFLD": 56,
+        "PRINTS": 81,
+        "HAMAP": 785,
+        "PROSITEPATTERNS": 55
+      },
+      "proteins_only_from_library": {
+        "PANTHER": 3283,
+        "PFAM": 1443,
+        "PIRSF": 469,
+        "GENE3D": 286,
+        "PROSITEPROFILES": 281,
+        "CDD": 244,
+        "SMART": 200,
+        "HAMAP": 198,
+        "NCBIFAM": 165,
+        "SUPERFAMILY": 127,
+        "SFLD": 33,
+        "PROSITEPATTERNS": 26,
+        "PRINTS": 3
+      }
+    },
+    "split2_val": {
+      "n_rows": 5627,
+      "n_proteins": 2179,
+      "rows_by_library": {
+        "PFAM": 1862,
+        "NCBIFAM": 1171,
+        "PIRSF": 1018,
+        "SUPERFAMILY": 739,
+        "SMART": 398,
+        "CDD": 348,
+        "PRINTS": 42,
+        "SFLD": 38,
+        "PROSITEPATTERNS": 11
+      },
+      "proteins_by_library": {
+        "PFAM": 1087,
+        "NCBIFAM": 493,
+        "CDD": 206,
+        "SFLD": 20,
+        "SUPERFAMILY": 415,
+        "SMART": 236,
+        "PIRSF": 486,
+        "PRINTS": 21,
+        "PROSITEPATTERNS": 8
+      },
+      "proteins_only_from_library": {
+        "PFAM": 680,
+        "NCBIFAM": 227,
+        "PIRSF": 217,
+        "SUPERFAMILY": 172,
+        "SMART": 101,
+        "CDD": 84,
+        "SFLD": 17,
+        "PROSITEPATTERNS": 3,
+        "PRINTS": 1
+      }
+    },
+    "split3_val": {
+      "n_rows": 24490,
+      "n_proteins": 5982,
+      "rows_by_library": {
+        "PANTHER": 11864,
+        "PIRSF": 3123,
+        "PFAM": 2859,
+        "PROSITEPROFILES": 1507,
+        "NCBIFAM": 1284,
+        "SUPERFAMILY": 1090,
+        "GENE3D": 828,
+        "HAMAP": 737,
+        "SMART": 559,
+        "CDD": 521,
+        "SFLD": 50,
+        "PRINTS": 50,
+        "PROSITEPATTERNS": 18
+      },
+      "proteins_by_library": {
+        "PFAM": 1642,
+        "GENE3D": 538,
+        "PANTHER": 3914,
+        "PROSITEPROFILES": 1098,
+        "PIRSF": 1204,
+        "CDD": 312,
+        "SUPERFAMILY": 939,
+        "NCBIFAM": 575,
+        "SMART": 333,
+        "HAMAP": 352,
+        "SFLD": 28,
+        "PROSITEPATTERNS": 17,
+        "PRINTS": 35
+      },
+      "proteins_only_from_library": {
+        "PANTHER": 1336,
+        "PFAM": 641,
+        "PIRSF": 199,
+        "GENE3D": 113,
+        "PROSITEPROFILES": 111,
+        "CDD": 104,
+        "HAMAP": 104,
+        "SMART": 102,
+        "NCBIFAM": 78,
+        "SUPERFAMILY": 70,
+        "SFLD": 12,
+        "PROSITEPATTERNS": 7,
+        "PRINTS": 3
+      }
+    },
+    "split3_test": {
+      "n_rows": 1712,
+      "n_proteins": 768,
+      "rows_by_library": {
+        "PFAM": 564,
+        "CDD": 555,
+        "SUPERFAMILY": 184,
+        "PIRSF": 149,
+        "NCBIFAM": 130,
+        "SMART": 92,
+        "PROSITEPATTERNS": 17,
+        "SFLD": 14,
+        "PRINTS": 7
+      },
+      "proteins_by_library": {
+        "PFAM": 295,
+        "SUPERFAMILY": 92,
+        "PIRSF": 76,
+        "NCBIFAM": 65,
+        "SMART": 55,
+        "CDD": 286,
+        "SFLD": 7,
+        "PROSITEPATTERNS": 17,
+        "PRINTS": 6
+      },
+      "proteins_only_from_library": {
+        "CDD": 263,
+        "PFAM": 195,
+        "SUPERFAMILY": 72,
+        "PIRSF": 36,
+        "NCBIFAM": 31,
+        "SMART": 25,
+        "PROSITEPATTERNS": 14,
+        "SFLD": 6,
+        "PRINTS": 3
+      }
+    },
+    "arabidopsis": {
+      "n_rows": 5419,
+      "n_proteins": 2282,
+      "rows_by_library": {
+        "PFAM": 1831,
+        "SMART": 957,
+        "SUPERFAMILY": 918,
+        "NCBIFAM": 775,
+        "PIRSF": 524,
+        "CDD": 402,
+        "SFLD": 11,
+        "PROSITEPATTERNS": 1
+      },
+      "proteins_by_library": {
+        "PIRSF": 232,
+        "PFAM": 1038,
+        "SUPERFAMILY": 550,
+        "SMART": 462,
+        "NCBIFAM": 318,
+        "CDD": 252,
+        "SFLD": 5,
+        "PROSITEPATTERNS": 1
+      },
+      "proteins_only_from_library": {
+        "PFAM": 739,
+        "SUPERFAMILY": 319,
+        "SMART": 302,
+        "NCBIFAM": 138,
+        "PIRSF": 131,
+        "CDD": 120,
+        "SFLD": 4
+      }
+    },
+    "tartary": {
+      "n_rows": 55965,
+      "n_proteins": 17488,
+      "rows_by_library": {
+        "PANTHER": 31516,
+        "PFAM": 5802,
+        "PROSITEPROFILES": 3585,
+        "SMART": 2891,
+        "GENE3D": 2846,
+        "SUPERFAMILY": 2609,
+        "NCBIFAM": 2246,
+        "PIRSF": 2162,
+        "CDD": 1558,
+        "HAMAP": 659,
+        "SFLD": 45,
+        "PROSITEPATTERNS": 42,
+        "PRINTS": 4
+      },
+      "proteins_by_library": {
+        "PFAM": 3497,
+        "PIRSF": 991,
+        "SUPERFAMILY": 1750,
+        "CDD": 1049,
+        "SMART": 1563,
+        "NCBIFAM": 988,
+        "PROSITEPROFILES": 1852,
+        "PANTHER": 11196,
+        "GENE3D": 1860,
+        "HAMAP": 314,
+        "SFLD": 20,
+        "PROSITEPATTERNS": 28,
+        "PRINTS": 2
+      },
+      "proteins_only_from_library": {
+        "PANTHER": 6045,
+        "PFAM": 1454,
+        "PROSITEPROFILES": 743,
+        "SMART": 654,
+        "GENE3D": 653,
+        "SUPERFAMILY": 615,
+        "PIRSF": 271,
+        "NCBIFAM": 268,
+        "CDD": 266,
+        "HAMAP": 59,
+        "SFLD": 4,
+        "PROSITEPATTERNS": 3,
+        "PRINTS": 2
+      }
+    }
+  },
+  "library_temporal_table": {
+    "PFAM": {
+      "version": "37.1",
+      "xml_spelling": [
+        "PFAM"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "GENE3D": {
+      "version": "4.3.0",
+      "xml_spelling": [
+        "GENE3D"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PIRSR": {
+      "version": "2023_05",
+      "xml_spelling": [
+        "PIRSR"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": true,
+      "temporal_class": "pre_T0"
+    },
+    "SUPERFAMILY": {
+      "version": "1.75",
+      "xml_spelling": [
+        "SUPERFAMILY"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "FUNFAM": {
+      "version": "4.3.0",
+      "xml_spelling": [
+        "FUNFAM"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PANTHER": {
+      "version": "19.0",
+      "xml_spelling": [
+        "PANTHER"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PROSITEPROFILES": {
+      "version": "2023_05",
+      "xml_spelling": [
+        "PROSITE_PROFILES"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": true,
+      "temporal_class": "pre_T0"
+    },
+    "CDD": {
+      "version": "3.20",
+      "xml_spelling": [
+        "CDD"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PROSITEPATTERNS": {
+      "version": "2023_05",
+      "xml_spelling": [
+        "PROSITE_PATTERNS"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": true,
+      "temporal_class": "pre_T0"
+    },
+    "SMART": {
+      "version": "9.0",
+      "xml_spelling": [
+        "SMART"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PRINTS": {
+      "version": "42.0",
+      "xml_spelling": [
+        "PRINTS"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "NCBIFAM": {
+      "version": "15.0",
+      "xml_spelling": [
+        "NCBIFAM"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "PIRSF": {
+      "version": "3.10",
+      "xml_spelling": [
+        "PIRSF"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "COILS": {
+      "version": "2.2.1",
+      "xml_spelling": [
+        "COILS"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    },
+    "HAMAP": {
+      "version": "2023_05",
+      "xml_spelling": [
+        "HAMAP"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": true,
+      "temporal_class": "pre_T0"
+    },
+    "SFLD": {
+      "version": "4",
+      "xml_spelling": [
+        "SFLD"
+      ],
+      "bundled_in": "5.72-103.0",
+      "bundled_release_date": "2024-11-28",
+      "date_coded": false,
+      "temporal_class": "undated_bundled_103.0"
+    }
+  },
+  "pre_T0_date_coded_libraries": [
+    "HAMAP",
+    "PIRSR",
+    "PROSITEPATTERNS",
+    "PROSITEPROFILES"
+  ],
+  "share_struct_rows_from_pre_T0_datecoded": {
+    "split2_val": 0.002,
+    "split3_test": 0.0099
+  },
+  "test_window_struct_dependence": {
+    "n_targets": 1130,
+    "targets_with_struct_evidence": 752,
+    "targets_with_struct_as_only_channel": 33
+  },
+  "restriction": {
+    "full": {
+      "keep_libraries": "全部",
+      "val": {
+        "n_rows_in": 5627,
+        "n_rows_kept": 5627,
+        "n_proteins_kept": 2179
+      },
+      "test": {
+        "n_rows_in": 1712,
+        "n_rows_kept": 1712,
+        "n_proteins_kept": 768
+      }
+    },
+    "datecoded_pre_T0": {
+      "keep_libraries": [
+        "HAMAP",
+        "PIRSR",
+        "PROSITEPATTERNS",
+        "PROSITEPROFILES"
+      ],
+      "val": {
+        "n_rows_in": 5627,
+        "n_rows_kept": 11,
+        "n_proteins_kept": 8
+      },
+      "test": {
+        "n_rows_in": 1712,
+        "n_rows_kept": 17,
+        "n_proteins_kept": 17
+      }
+    },
+    "dropped": {
+      "keep_libraries": [],
+      "val": {
+        "n_rows_in": 5627,
+        "n_rows_kept": 0,
+        "n_proteins_kept": 0
+      },
+      "test": {
+        "n_rows_in": 1712,
+        "n_rows_kept": 0,
+        "n_proteins_kept": 0
+      }
+    }
+  },
+  "learn_gate": {
+    "full": {
+      "gate": 0.05,
+      "grid": {
+        "0.05": {
+          "val_fmax": 0.4825,
+          "val_aupr": 0.3828,
+          "val_mean_terms_raw": 2.93,
+          "val_covered": 2752
+        },
+        "0.1": {
+          "val_fmax": 0.4825,
+          "val_aupr": 0.3636,
+          "val_mean_terms_raw": 2.32,
+          "val_covered": 2611
+        },
+        "0.15": {
+          "val_fmax": 0.4808,
+          "val_aupr": 0.3302,
+          "val_mean_terms_raw": 1.66,
+          "val_covered": 2355
+        },
+        "0.25": {
+          "val_fmax": 0.4622,
+          "val_aupr": 0.2771,
+          "val_mean_terms_raw": 1.02,
+          "val_covered": 1846
+        },
+        "0.35": {
+          "val_fmax": 0.3077,
+          "val_aupr": 0.1567,
+          "val_mean_terms_raw": 0.4,
+          "val_covered": 926
+        }
+      }
+    },
+    "datecoded_pre_T0": {
+      "gate": 0.05,
+      "grid": {
+        "0.05": {
+          "val_fmax": 0.4433,
+          "val_aupr": 0.26,
+          "val_mean_terms_raw": 2.7,
+          "val_covered": 2515
+        },
+        "0.1": {
+          "val_fmax": 0.4433,
+          "val_aupr": 0.2497,
+          "val_mean_terms_raw": 2.17,
+          "val_covered": 2402
+        },
+        "0.15": {
+          "val_fmax": 0.439,
+          "val_aupr": 0.2218,
+          "val_mean_terms_raw": 1.56,
+          "val_covered": 2065
+        },
+        "0.25": {
+          "val_fmax": 0.2834,
+          "val_aupr": 0.1178,
+          "val_mean_terms_raw": 0.61,
+          "val_covered": 1283
+        },
+        "0.35": {
+          "val_fmax": 0.1441,
+          "val_aupr": 0.0519,
+          "val_mean_terms_raw": 0.15,
+          "val_covered": 455
+        }
+      }
+    },
+    "dropped": {
+      "gate": 0.05,
+      "grid": {
+        "0.05": {
+          "val_fmax": 0.4428,
+          "val_aupr": 0.258,
+          "val_mean_terms_raw": 2.68,
+          "val_covered": 2510
+        },
+        "0.1": {
+          "val_fmax": 0.4428,
+          "val_aupr": 0.2477,
+          "val_mean_terms_raw": 2.17,
+          "val_covered": 2400
+        },
+        "0.15": {
+          "val_fmax": 0.4396,
+          "val_aupr": 0.2212,
+          "val_mean_terms_raw": 1.56,
+          "val_covered": 2072
+        },
+        "0.25": {
+          "val_fmax": 0.287,
+          "val_aupr": 0.1188,
+          "val_mean_terms_raw": 0.63,
+          "val_covered": 1292
+        },
+        "0.35": {
+          "val_fmax": 0.1426,
+          "val_aupr": 0.0503,
+          "val_mean_terms_raw": 0.15,
+          "val_covered": 453
+        }
+      }
+    }
+  },
+  "sensitivity": {
+    "fusion_full": {
+      "val": {
+        "fmax": 0.3354,
+        "aupr": 0.2321,
+        "smin": 10.6962,
+        "mean_terms_raw": 4.25,
+        "covered_propagated": 2463
+      },
+      "test_grid": {
+        "fmax": 0.4321,
+        "aupr": 0.2947,
+        "smin": 7.5926,
+        "auc": 0.6581,
+        "mean_terms_raw": 3.67,
+        "mean_terms_at_fmax": 1.08,
+        "covered_propagated": 874,
+        "distinct_terms_at_fmax": 1085
+      },
+      "t_star_argmax": 0.42,
+      "t_index_argmax": 42,
+      "val_F1_argmax": 0.3354,
+      "test_P_argmax": 0.5274,
+      "test_R_argmax": 0.366,
+      "test_F1_argmax": 0.4321,
+      "test_covered_argmax": 583,
+      "t_star_one_se": 0.45,
+      "t_index_one_se": 45,
+      "val_F1_one_se": 0.3303,
+      "test_P_one_se": 0.5482,
+      "test_R_one_se": 0.3563,
+      "test_F1_one_se": 0.4319,
+      "test_covered_one_se": 556,
+      "val_F1_se": 0.00683,
+      "val_F1_curve_max": 0.3354
+    },
+    "learn_full": {
+      "val": {
+        "fmax": 0.4825,
+        "aupr": 0.3828,
+        "smin": 9.0409,
+        "mean_terms_raw": 2.93,
+        "covered_propagated": 2752
+      },
+      "test_grid": {
+        "fmax": 0.5716,
+        "aupr": 0.4893,
+        "smin": 7.147,
+        "auc": 0.6163,
+        "mean_terms_raw": 3.08,
+        "mean_terms_at_fmax": 0.96,
+        "covered_propagated": 1009,
+        "distinct_terms_at_fmax": 522
+      },
+      "t_star_argmax": 0.1,
+      "t_index_argmax": 10,
+      "val_F1_argmax": 0.4825,
+      "test_P_argmax": 0.3158,
+      "test_R_argmax": 0.5692,
+      "test_F1_argmax": 0.4063,
+      "test_covered_argmax": 961,
+      "t_star_one_se": 0.21,
+      "t_index_one_se": 21,
+      "val_F1_one_se": 0.4786,
+      "test_P_one_se": 0.6921,
+      "test_R_one_se": 0.4847,
+      "test_F1_one_se": 0.5701,
+      "test_covered_one_se": 795,
+      "val_F1_se": 0.00573,
+      "val_F1_curve_max": 0.4825
+    },
+    "fusion_datecoded_pre_T0": {
+      "val": {
+        "fmax": 0.3207,
+        "aupr": 0.158,
+        "smin": 11.2771,
+        "mean_terms_raw": 3.43,
+        "covered_propagated": 2021
+      },
+      "test_grid": {
+        "fmax": 0.3496,
+        "aupr": 0.2045,
+        "smin": 8.1703,
+        "auc": 0.6359,
+        "mean_terms_raw": 3.2,
+        "mean_terms_at_fmax": 3.07,
+        "covered_propagated": 777,
+        "distinct_terms_at_fmax": 2495
+      },
+      "t_star_argmax": 0.23,
+      "t_index_argmax": 23,
+      "val_F1_argmax": 0.3207,
+      "test_P_argmax": 0.2479,
+      "test_R_argmax": 0.5441,
+      "test_F1_argmax": 0.3406,
+      "test_covered_argmax": 767,
+      "t_star_one_se": 0.39,
+      "t_index_one_se": 39,
+      "val_F1_one_se": 0.3144,
+      "test_P_one_se": 0.2617,
+      "test_R_one_se": 0.5169,
+      "test_F1_one_se": 0.3475,
+      "test_covered_one_se": 747,
+      "val_F1_se": 0.00656,
+      "val_F1_curve_max": 0.3207
+    },
+    "learn_datecoded_pre_T0": {
+      "val": {
+        "fmax": 0.4433,
+        "aupr": 0.26,
+        "smin": 10.2219,
+        "mean_terms_raw": 2.7,
+        "covered_propagated": 2515
+      },
+      "test_grid": {
+        "fmax": 0.5323,
+        "aupr": 0.4278,
+        "smin": 7.6306,
+        "auc": 0.5969,
+        "mean_terms_raw": 2.98,
+        "mean_terms_at_fmax": 0.61,
+        "covered_propagated": 955,
+        "distinct_terms_at_fmax": 299
+      },
+      "t_star_argmax": 0.13,
+      "t_index_argmax": 13,
+      "val_F1_argmax": 0.4433,
+      "test_P_argmax": 0.3365,
+      "test_R_argmax": 0.513,
+      "test_F1_argmax": 0.4064,
+      "test_covered_argmax": 863,
+      "t_star_one_se": 0.15,
+      "t_index_one_se": 15,
+      "val_F1_one_se": 0.439,
+      "test_P_one_se": 0.3433,
+      "test_R_one_se": 0.4933,
+      "test_F1_one_se": 0.4048,
+      "test_covered_one_se": 820,
+      "val_F1_se": 0.00642,
+      "val_F1_curve_max": 0.4433
+    },
+    "fusion_dropped": {
+      "val": {
+        "fmax": 0.3207,
+        "aupr": 0.1589,
+        "smin": 11.2782,
+        "mean_terms_raw": 3.43,
+        "covered_propagated": 2021
+      },
+      "test_grid": {
+        "fmax": 0.349,
+        "aupr": 0.192,
+        "smin": 8.1797,
+        "auc": 0.6359,
+        "mean_terms_raw": 3.2,
+        "mean_terms_at_fmax": 3.08,
+        "covered_propagated": 777,
+        "distinct_terms_at_fmax": 2500
+      },
+      "t_star_argmax": 0.23,
+      "t_index_argmax": 23,
+      "val_F1_argmax": 0.3207,
+      "test_P_argmax": 0.2469,
+      "test_R_argmax": 0.5432,
+      "test_F1_argmax": 0.3395,
+      "test_covered_argmax": 766,
+      "t_star_one_se": 0.39,
+      "t_index_one_se": 39,
+      "val_F1_one_se": 0.3144,
+      "test_P_one_se": 0.2611,
+      "test_R_one_se": 0.516,
+      "test_F1_one_se": 0.3468,
+      "test_covered_one_se": 746,
+      "val_F1_se": 0.00656,
+      "val_F1_curve_max": 0.3207
+    },
+    "learn_dropped": {
+      "val": {
+        "fmax": 0.4428,
+        "aupr": 0.258,
+        "smin": 10.2352,
+        "mean_terms_raw": 2.68,
+        "covered_propagated": 2510
+      },
+      "test_grid": {
+        "fmax": 0.529,
+        "aupr": 0.3766,
+        "smin": 7.6347,
+        "auc": 0.5969,
+        "mean_terms_raw": 2.95,
+        "mean_terms_at_fmax": 0.56,
+        "covered_propagated": 950,
+        "distinct_terms_at_fmax": 253
+      },
+      "t_star_argmax": 0.13,
+      "t_index_argmax": 13,
+      "val_F1_argmax": 0.4428,
+      "test_P_argmax": 0.333,
+      "test_R_argmax": 0.5064,
+      "test_F1_argmax": 0.4018,
+      "test_covered_argmax": 856,
+      "t_star_one_se": 0.15,
+      "t_index_one_se": 15,
+      "val_F1_one_se": 0.4396,
+      "test_P_one_se": 0.3413,
+      "test_R_one_se": 0.4931,
+      "test_F1_one_se": 0.4034,
+      "test_covered_one_se": 824,
+      "val_F1_se": 0.00665,
+      "val_F1_curve_max": 0.4428
+    }
+  },
+  "keep_pre_T0_libraries": [
+    "HAMAP",
+    "PIRSR",
+    "PROSITEPATTERNS",
+    "PROSITEPROFILES"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "n_queries": 1159,
+  "n_targets": 1130,
+  "seq_hit_prots": 821,
+  "struct_hit_prots": 768,
+  "struct_rows": 1712,
+  "lit_hit_prots": 740,
+  "lit_hit_prots_pretrunc": 778,
+  "lit_rows": 3736,
+  "at_least_one": 1088,
+  "no_evidence": 71,
+  "seq_no_hit_among_targets": 322,
+  "pred_prots_multi": 892,
+  "pred_prots_multi_in_targets": 874,
+  "pred_prots_seq-only": 788,
+  "pred_prots_seq-only_in_targets": 777,
+  "pred_prots_seq+struct": 889,
+  "pred_prots_seq+struct_in_targets": 871,
+  "pred_prots_seq+lit": 788,
+  "pred_prots_seq+lit_in_targets": 777,
+  "audit": {
+    "n": 1088,
+    "unknown": 196,
+    "parent_child_collapses": 1114,
+    "dag_validation_removed": 0,
+    "branch_conflicts": 36851
+  }
+}

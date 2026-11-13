@@ -1,0 +1,47 @@
+{
+  "3ch_fraction_of_output": 0.3651,
+  "arbiter_intake_proteins": 21565,
+  "channel_hit_proteins": {
+    "lit": 15051,
+    "seq": 17322,
+    "struct": 17488
+  },
+  "channel_supported_proteins": {
+    "lit": 9513,
+    "seq": 16981,
+    "struct": 15674
+  },
+  "gaf_rows": 144744,
+  "ge2_fraction_of_output": 0.7247,
+  "go_terms_covered": 6470,
+  "illegal_terms": 0,
+  "input_sequences": 34045,
+  "namespace_rows": {
+    "BPO": 64741,
+    "CCO": 43775,
+    "MFO": 36228
+  },
+  "output_fraction_of_input": 0.5927,
+  "proteins_3_channels": 7366,
+  "proteins_at_term_cap": 2251,
+  "proteins_ge_2_channels": 14624,
+  "proteins_with_output": 20178,
+  "source_combo_rows": {
+    "lit|seq": 13736,
+    "lit|seq|struct": 5891,
+    "lit|struct": 2811,
+    "seq": 82749,
+    "seq|struct": 20646,
+    "struct": 18911
+  },
+  "terms_per_protein_max": 15,
+  "terms_per_protein_mean": 7.17,
+  "terms_per_protein_median": 6.0,
+  "topology_events": {
+    "branch_conflicts": 898792,
+    "namespace_conflicts": 1139798,
+    "parent_child_collapses": 59871,
+    "same_merges": 23221
+  },
+  "unknown_marked": 1387
+}

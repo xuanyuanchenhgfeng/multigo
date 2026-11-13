@@ -1,0 +1,599 @@
+{
+  "scale": {
+    "MFO": {
+      "n_proteins_direct": 371,
+      "n_direct_annotations": 501,
+      "n_propagated_annotations": 2408,
+      "mean_direct_per_protein": 1.35,
+      "max_direct_per_protein": 8,
+      "proteins_ge_64_direct": 0
+    },
+    "BPO": {
+      "n_proteins_direct": 184,
+      "n_direct_annotations": 290,
+      "n_propagated_annotations": 3072,
+      "mean_direct_per_protein": 1.58,
+      "max_direct_per_protein": 7,
+      "proteins_ge_64_direct": 0
+    },
+    "CCO": {
+      "n_proteins_direct": 772,
+      "n_direct_annotations": 881,
+      "n_propagated_annotations": 2762,
+      "mean_direct_per_protein": 1.14,
+      "max_direct_per_protein": 4,
+      "proteins_ge_64_direct": 0
+    },
+    "overall": {
+      "n_proteins": 1130,
+      "n_direct_annotations": 1672,
+      "n_propagated_annotations": 8242,
+      "mean_propagated_per_protein": 7.29
+    }
+  },
+  "bootstrap": {
+    "B": 2000,
+    "seed": 20261104,
+    "z80": 2.8,
+    "mdd_formula": "MDD_80 = 2.80 × SE(Δ配对)"
+  },
+  "frozen_thresholds": {
+    "fusion": {
+      "t_index": 39,
+      "t_star": 0.39,
+      "val_F1_at_tstar": 0.3144,
+      "val_F1_se": 0.00646
+    },
+    "learn": {
+      "t_index": 15,
+      "t_star": 0.15,
+      "val_F1_at_tstar": 0.439,
+      "val_F1_se": 0.00624
+    },
+    "union": {
+      "t_index": 31,
+      "t_star": 0.31,
+      "val_F1_at_tstar": 0.3399,
+      "val_F1_se": 0.00681
+    },
+    "vote2": {
+      "t_index": 43,
+      "t_star": 0.43,
+      "val_F1_at_tstar": 0.1354,
+      "val_F1_se": 0.00701
+    }
+  },
+  "strata": {
+    "overall": {
+      "n_proteins": 1130,
+      "n_terms": 1127,
+      "n_annotations": 8242,
+      "frozen_F1": {
+        "fusion": 0.3475,
+        "learn": 0.4048,
+        "union": 0.3557,
+        "vote2": 0.0953
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": 0.0575,
+          "ci95": [
+            0.0376,
+            0.0783
+          ],
+          "ci_half_width": 0.0203,
+          "se": 0.0105,
+          "MDD_80": 0.0293,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": 0.0494,
+          "ci95": [
+            0.0298,
+            0.0701
+          ],
+          "ci_half_width": 0.0202,
+          "se": 0.0103,
+          "MDD_80": 0.0287,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": 0.3097,
+          "ci95": [
+            0.2844,
+            0.335
+          ],
+          "ci_half_width": 0.0253,
+          "se": 0.0133,
+          "MDD_80": 0.0374,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": -0.0081,
+          "ci95": [
+            -0.0219,
+            0.0054
+          ],
+          "ci_half_width": 0.0137,
+          "se": 0.0069,
+          "MDD_80": 0.0194,
+          "significant": false
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.3263,
+          0.3689
+        ],
+        "learn": [
+          0.3845,
+          0.4262
+        ],
+        "union": [
+          0.3347,
+          0.3757
+        ],
+        "vote2": [
+          0.0756,
+          0.1154
+        ]
+      }
+    },
+    "MFO": {
+      "n_proteins": 371,
+      "n_terms": 478,
+      "n_annotations": 2408,
+      "frozen_F1": {
+        "fusion": 0.5188,
+        "learn": 0.4688,
+        "union": 0.5363,
+        "vote2": 0.1843
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": -0.0499,
+          "ci95": [
+            -0.0875,
+            -0.0147
+          ],
+          "ci_half_width": 0.0364,
+          "se": 0.0184,
+          "MDD_80": 0.0516,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.0672,
+          "ci95": [
+            -0.1019,
+            -0.0339
+          ],
+          "ci_half_width": 0.034,
+          "se": 0.0175,
+          "MDD_80": 0.0491,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": 0.285,
+          "ci95": [
+            0.2398,
+            0.3318
+          ],
+          "ci_half_width": 0.046,
+          "se": 0.0236,
+          "MDD_80": 0.0662,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": -0.0174,
+          "ci95": [
+            -0.0393,
+            0.0047
+          ],
+          "ci_half_width": 0.022,
+          "se": 0.0113,
+          "MDD_80": 0.0317,
+          "significant": false
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.4854,
+          0.5505
+        ],
+        "learn": [
+          0.4298,
+          0.5052
+        ],
+        "union": [
+          0.502,
+          0.5681
+        ],
+        "vote2": [
+          0.1426,
+          0.2308
+        ]
+      }
+    },
+    "BPO": {
+      "n_proteins": 184,
+      "n_terms": 539,
+      "n_annotations": 3072,
+      "frozen_F1": {
+        "fusion": 0.2877,
+        "learn": 0.0,
+        "union": 0.3156,
+        "vote2": 0.028
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": -0.2864,
+          "ci95": [
+            -0.3257,
+            -0.2479
+          ],
+          "ci_half_width": 0.0389,
+          "se": 0.0201,
+          "MDD_80": 0.0564,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.3146,
+          "ci95": [
+            -0.3599,
+            -0.2681
+          ],
+          "ci_half_width": 0.0459,
+          "se": 0.0234,
+          "MDD_80": 0.0654,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": -0.0282,
+          "ci95": [
+            -0.0547,
+            -0.0072
+          ],
+          "ci_half_width": 0.0237,
+          "se": 0.0123,
+          "MDD_80": 0.0343,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": -0.0281,
+          "ci95": [
+            -0.0522,
+            -0.0052
+          ],
+          "ci_half_width": 0.0235,
+          "se": 0.0119,
+          "MDD_80": 0.0332,
+          "significant": true
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.2479,
+          0.3257
+        ],
+        "learn": [
+          0.0,
+          0.0
+        ],
+        "union": [
+          0.2681,
+          0.3599
+        ],
+        "vote2": [
+          0.0072,
+          0.0547
+        ]
+      }
+    },
+    "CCO": {
+      "n_proteins": 772,
+      "n_terms": 110,
+      "n_annotations": 2762,
+      "frozen_F1": {
+        "fusion": 0.6869,
+        "learn": 0.7187,
+        "union": 0.7326,
+        "vote2": 0.0627
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": 0.0318,
+          "ci95": [
+            0.0158,
+            0.0483
+          ],
+          "ci_half_width": 0.0162,
+          "se": 0.0082,
+          "MDD_80": 0.023,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.0141,
+          "ci95": [
+            -0.0263,
+            -0.0025
+          ],
+          "ci_half_width": 0.0119,
+          "se": 0.0061,
+          "MDD_80": 0.017,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": 0.656,
+          "ci95": [
+            0.6218,
+            0.6884
+          ],
+          "ci_half_width": 0.0333,
+          "se": 0.0173,
+          "MDD_80": 0.0483,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": -0.0459,
+          "ci95": [
+            -0.0611,
+            -0.0307
+          ],
+          "ci_half_width": 0.0152,
+          "se": 0.0078,
+          "MDD_80": 0.0219,
+          "significant": true
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.6587,
+          0.7144
+        ],
+        "learn": [
+          0.692,
+          0.7447
+        ],
+        "union": [
+          0.7067,
+          0.7587
+        ],
+        "vote2": [
+          0.0422,
+          0.0846
+        ]
+      }
+    },
+    "BPO_shallow": {
+      "n_proteins": 184,
+      "n_terms": 319,
+      "n_annotations": 2384,
+      "frozen_F1": {
+        "fusion": 0.3444,
+        "learn": 0.0,
+        "union": 0.364,
+        "vote2": 0.0326
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": -0.3432,
+          "ci95": [
+            -0.3866,
+            -0.2981
+          ],
+          "ci_half_width": 0.0443,
+          "se": 0.0229,
+          "MDD_80": 0.0642,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.3626,
+          "ci95": [
+            -0.4121,
+            -0.3127
+          ],
+          "ci_half_width": 0.0497,
+          "se": 0.0254,
+          "MDD_80": 0.0711,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": -0.0322,
+          "ci95": [
+            -0.0626,
+            -0.0091
+          ],
+          "ci_half_width": 0.0268,
+          "se": 0.0135,
+          "MDD_80": 0.0379,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": -0.0194,
+          "ci95": [
+            -0.0432,
+            0.0049
+          ],
+          "ci_half_width": 0.0241,
+          "se": 0.012,
+          "MDD_80": 0.0337,
+          "significant": false
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.2981,
+          0.3866
+        ],
+        "learn": [
+          0.0,
+          0.0
+        ],
+        "union": [
+          0.3127,
+          0.4121
+        ],
+        "vote2": [
+          0.0091,
+          0.0626
+        ]
+      }
+    },
+    "BPO_mid": {
+      "n_proteins": 146,
+      "n_terms": 121,
+      "n_annotations": 400,
+      "frozen_F1": {
+        "fusion": 0.2296,
+        "learn": 0.0,
+        "union": 0.2253,
+        "vote2": 0.0269
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": -0.2274,
+          "ci95": [
+            -0.295,
+            -0.158
+          ],
+          "ci_half_width": 0.0685,
+          "se": 0.0354,
+          "MDD_80": 0.0993,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.2231,
+          "ci95": [
+            -0.2938,
+            -0.153
+          ],
+          "ci_half_width": 0.0704,
+          "se": 0.0366,
+          "MDD_80": 0.1025,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": -0.0265,
+          "ci95": [
+            -0.0598,
+            -0.0034
+          ],
+          "ci_half_width": 0.0282,
+          "se": 0.0154,
+          "MDD_80": 0.0432,
+          "significant": true
+        },
+        "fusion-union": {
+          "delta": 0.0043,
+          "ci95": [
+            -0.0393,
+            0.0498
+          ],
+          "ci_half_width": 0.0446,
+          "se": 0.0225,
+          "MDD_80": 0.0629,
+          "significant": false
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.158,
+          0.295
+        ],
+        "learn": [
+          0.0,
+          0.0
+        ],
+        "union": [
+          0.153,
+          0.2938
+        ],
+        "vote2": [
+          0.0034,
+          0.0598
+        ]
+      }
+    },
+    "BPO_deep": {
+      "n_proteins": 96,
+      "n_terms": 99,
+      "n_annotations": 288,
+      "frozen_F1": {
+        "fusion": 0.1513,
+        "learn": 0.0,
+        "union": 0.1402,
+        "vote2": 0.0206
+      },
+      "paired_delta_F1": {
+        "learn-fusion": {
+          "delta": -0.1524,
+          "ci95": [
+            -0.2315,
+            -0.082
+          ],
+          "ci_half_width": 0.0747,
+          "se": 0.0377,
+          "MDD_80": 0.1056,
+          "significant": true
+        },
+        "learn-union": {
+          "delta": -0.1404,
+          "ci95": [
+            -0.218,
+            -0.0717
+          ],
+          "ci_half_width": 0.0731,
+          "se": 0.0371,
+          "MDD_80": 0.104,
+          "significant": true
+        },
+        "learn-vote2": {
+          "delta": -0.0205,
+          "ci95": [
+            -0.0527,
+            0.0
+          ],
+          "ci_half_width": 0.0264,
+          "se": 0.0137,
+          "MDD_80": 0.0384,
+          "significant": false
+        },
+        "fusion-union": {
+          "delta": 0.012,
+          "ci95": [
+            -0.0426,
+            0.0667
+          ],
+          "ci_half_width": 0.0546,
+          "se": 0.0286,
+          "MDD_80": 0.08,
+          "significant": false
+        }
+      },
+      "F1_ci95": {
+        "fusion": [
+          0.082,
+          0.2315
+        ],
+        "learn": [
+          0.0,
+          0.0
+        ],
+        "union": [
+          0.0717,
+          0.218
+        ],
+        "vote2": [
+          0.0,
+          0.0527
+        ]
+      }
+    }
+  },
+  "depth_terciles": {
+    "d33": 4,
+    "d66": 5,
+    "n_deep_terms": 99,
+    "n_terms_pool": 539
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "B": 2000,
+  "seed": 20261104,
+  "n_targets": 1130,
+  "config": "datecoded_pre_T0",
+  "grid": {
+    "learn_nolitonly": {
+      "fmax": 0.5332,
+      "aupr": 0.4197,
+      "smin": 7.626,
+      "auc": 0.5895
+    },
+    "learn": {
+      "fmax": 0.5323,
+      "aupr": 0.4278,
+      "smin": 7.6306,
+      "auc": 0.5969
+    },
+    "nn_top1": {
+      "fmax": 0.4161,
+      "aupr": 0.2105,
+      "smin": 8.3326,
+      "auc": 0.5791
+    },
+    "fusion": {
+      "fmax": 0.3496,
+      "aupr": 0.2045,
+      "smin": 8.1703,
+      "auc": 0.6359
+    }
+  },
+  "grid_ci_learn_nolitonly": {
+    "fmax": [
+      0.5058,
+      0.5624
+    ],
+    "smin": [
+      6.985,
+      8.2675
+    ],
+    "aupr": [
+      0.3847,
+      0.4554
+    ],
+    "auc": [
+      0.5803,
+      0.6
+    ]
+  },
+  "t_star": {
+    "learn_nolitonly": 0.15,
+    "learn": 0.15,
+    "nn_top1": 0.28,
+    "fusion": 0.39
+  },
+  "frozen_F1": {
+    "learn_nolitonly": {
+      "point": 0.4441,
+      "ci95": [
+        0.4226,
+        0.4662
+      ]
+    },
+    "learn": {
+      "point": 0.4048,
+      "ci95": [
+        0.3845,
+        0.4262
+      ]
+    },
+    "nn_top1": {
+      "point": 0.4161,
+      "ci95": [
+        0.3942,
+        0.4382
+      ]
+    },
+    "fusion": {
+      "point": 0.3475,
+      "ci95": [
+        0.3263,
+        0.3689
+      ]
+    }
+  },
+  "paired_delta": {
+    "learn_nolitonly-nn_top1": {
+      "delta": 0.0281,
+      "ci95": [
+        0.0067,
+        0.0494
+      ]
+    },
+    "learn_nolitonly-fusion": {
+      "delta": 0.0968,
+      "ci95": [
+        0.0768,
+        0.1177
+      ]
+    },
+    "learn_nolitonly-learn": {
+      "delta": 0.0393,
+      "ci95": [
+        0.0308,
+        0.0479
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "proteins": 2919,
+  "same_merges": 1635,
+  "parent_child_collapses": 5336,
+  "branch_conflicts": 61055,
+  "namespace_conflicts": 92524,
+  "illegal_terms": 0,
+  "unknown_marked": 501,
+  "proteins_with_predictions": 2418,
+  "branch_conflict_by_aspect": {
+    "F": 12150,
+    "P": 39900,
+    "C": 9005
+  }
+}

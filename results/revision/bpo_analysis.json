@@ -1,0 +1,193 @@
+{
+  "分层报告": {
+    "IC分层_3Channel": {
+      "中IC": {
+        "terms": 180,
+        "proteins": 153,
+        "annotations": 1037,
+        "oracle_fmax": 0.3185,
+        "oracle_t": 0.0
+      },
+      "低IC": {
+        "terms": 180,
+        "proteins": 184,
+        "annotations": 1264,
+        "oracle_fmax": 0.4132,
+        "oracle_t": 0.0
+      },
+      "高IC": {
+        "terms": 179,
+        "proteins": 184,
+        "annotations": 771,
+        "oracle_fmax": 0.322,
+        "oracle_t": 0.0
+      }
+    },
+    "IC分层_seq-only": {
+      "中IC": {
+        "terms": 180,
+        "proteins": 153,
+        "annotations": 1037,
+        "oracle_fmax": 0.3088,
+        "oracle_t": 0.0
+      },
+      "低IC": {
+        "terms": 180,
+        "proteins": 184,
+        "annotations": 1264,
+        "oracle_fmax": 0.3948,
+        "oracle_t": 0.0
+      },
+      "高IC": {
+        "terms": 179,
+        "proteins": 184,
+        "annotations": 771,
+        "oracle_fmax": 0.314,
+        "oracle_t": 0.0
+      }
+    },
+    "深度分层_3Channel": {
+      "浅层": {
+        "terms": 319,
+        "proteins": 184,
+        "annotations": 2384,
+        "oracle_fmax": 0.3648,
+        "oracle_t": 0.0
+      },
+      "中层": {
+        "terms": 121,
+        "proteins": 146,
+        "annotations": 400,
+        "oracle_fmax": 0.2624,
+        "oracle_t": 0.0
+      },
+      "深层": {
+        "terms": 99,
+        "proteins": 96,
+        "annotations": 288,
+        "oracle_fmax": 0.1814,
+        "oracle_t": 0.0
+      }
+    }
+  },
+  "阈值校准": {
+    "BPO": {
+      "val校准阈值": 0.0,
+      "val上的Fmax": 0.3851,
+      "test_校准阈值_F1": 0.3089,
+      "test_校准阈值_P": 0.3099,
+      "test_校准阈值_R": 0.308,
+      "test_oracle_Fmax(上界)": 0.3091,
+      "test_oracle_t": 0.17
+    },
+    "MFO": {
+      "val校准阈值": 0.17,
+      "val上的Fmax": 0.5924,
+      "test_校准阈值_F1": 0.5386,
+      "test_校准阈值_P": 0.4925,
+      "test_校准阈值_R": 0.5943,
+      "test_oracle_Fmax(上界)": 0.5416,
+      "test_oracle_t": 0.21
+    },
+    "CCO": {
+      "val校准阈值": 0.0,
+      "val上的Fmax": 0.5372,
+      "test_校准阈值_F1": 0.7362,
+      "test_校准阈值_P": 0.8585,
+      "test_校准阈值_R": 0.6445,
+      "test_oracle_Fmax(上界)": 0.7362,
+      "test_oracle_t": 0.0
+    },
+    "BPO_IC分层阈值": {
+      "低IC": {
+        "val校准阈值": 0.0,
+        "test_校准F1": 0.4132,
+        "test_oracle_Fmax": 0.4132,
+        "test_P": 0.4878,
+        "test_R": 0.3584
+      },
+      "中IC": {
+        "val校准阈值": 0.0,
+        "test_校准F1": 0.3185,
+        "test_oracle_Fmax": 0.3185,
+        "test_P": 0.3258,
+        "test_R": 0.3115
+      },
+      "高IC": {
+        "val校准阈值": 0.0,
+        "test_校准F1": 0.322,
+        "test_oracle_Fmax": 0.322,
+        "test_P": 0.3823,
+        "test_R": 0.2781
+      }
+    }
+  },
+  "误判案例": [
+    {
+      "protein": "O96795",
+      "IC误差和": 59.55,
+      "高IC漏报": [
+        "GO:0006490",
+        "GO:0006505",
+        "GO:0006629"
+      ],
+      "高IC误报": []
+    },
+    {
+      "protein": "C6TA59",
+      "IC误差和": 58.24,
+      "高IC漏报": [
+        "GO:0009266",
+        "GO:0009314",
+        "GO:0009648"
+      ],
+      "高IC误报": [
+        "GO:0006793",
+        "GO:0006970",
+        "GO:0044281"
+      ]
+    },
+    {
+      "protein": "C6SZ50",
+      "IC误差和": 58.24,
+      "高IC漏报": [
+        "GO:0009266",
+        "GO:0009314",
+        "GO:0009648"
+      ],
+      "高IC误报": [
+        "GO:0006793",
+        "GO:0006970",
+        "GO:0044281"
+      ]
+    },
+    {
+      "protein": "A0A5J5T2N2",
+      "IC误差和": 57.29,
+      "高IC漏报": [
+        "GO:0002238",
+        "GO:0008219",
+        "GO:0009595"
+      ],
+      "高IC误报": [
+        "GO:0002682",
+        "GO:0002831",
+        "GO:0006793"
+      ]
+    },
+    {
+      "protein": "A0A5J5NT52",
+      "IC误差和": 57.29,
+      "高IC漏报": [
+        "GO:0002238",
+        "GO:0008219",
+        "GO:0009595"
+      ],
+      "高IC误报": [
+        "GO:0002682",
+        "GO:0002831",
+        "GO:0006793"
+      ]
+    }
+  ]
+}

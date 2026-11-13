@@ -1,0 +1,23 @@
+{
+  "note": "苦荞序列通道在两种检索库下的对照：左列为 2026-10-19 交付产物（config.yaml 缺省回落，36 941 条复合索引 sprot_library），右列为按 config_revision.yaml 的 seq_channel.db_by_set 重放（library.fasta 25 453 条，索引 library_revision）。",
+  "rerun_date": "2026-11-10",
+  "stale_composite_index": {
+    "library": "sprot_library.dmnd (36941)",
+    "rows": 162861,
+    "proteins": 17322,
+    "hit_accessions": 9480
+  },
+  "revision_library": {
+    "library": "library_revision.dmnd (25453)",
+    "rows": 187226,
+    "proteins": 17637,
+    "hit_accessions": 10422
+  },
+  "delta": {
+    "rows": 24365,
+    "proteins": 315
+  },
+  "raw_hit_targets_outside_library": 9392,
+  "written_accessions_all_inside_library": 9480,
+  "downstream_rearbitrated": false
+}

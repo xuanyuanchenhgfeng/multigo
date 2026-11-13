@@ -1,0 +1,144 @@
+{
+  "fusion": {
+    "rows": 4206,
+    "by_source": {
+      "seq": {
+        "rows": 2411,
+        "in_truth": 211,
+        "precision": 0.0875
+      },
+      "seq|struct": {
+        "rows": 1036,
+        "in_truth": 359,
+        "precision": 0.3465
+      },
+      "struct": {
+        "rows": 482,
+        "in_truth": 47,
+        "precision": 0.0975
+      },
+      "lit|seq": {
+        "rows": 121,
+        "in_truth": 19,
+        "precision": 0.157
+      },
+      "lit|seq|struct": {
+        "rows": 95,
+        "in_truth": 33,
+        "precision": 0.3474
+      },
+      "lit|struct": {
+        "rows": 61,
+        "in_truth": 11,
+        "precision": 0.1803
+      }
+    },
+    "by_aspect": {
+      "C": {
+        "rows": 870,
+        "precision": 0.5414
+      },
+      "F": {
+        "rows": 2120,
+        "precision": 0.0797
+      },
+      "P": {
+        "rows": 1216,
+        "precision": 0.0329
+      }
+    }
+  },
+  "learn": {
+    "rows": 3541,
+    "by_source": {
+      "seq": {
+        "rows": 1330,
+        "in_truth": 195,
+        "precision": 0.1466
+      },
+      "seq|struct": {
+        "rows": 951,
+        "in_truth": 359,
+        "precision": 0.3775
+      },
+      "lit": {
+        "rows": 624,
+        "in_truth": 24,
+        "precision": 0.0385
+      },
+      "struct": {
+        "rows": 408,
+        "in_truth": 63,
+        "precision": 0.1544
+      },
+      "lit|seq|struct": {
+        "rows": 89,
+        "in_truth": 33,
+        "precision": 0.3708
+      },
+      "lit|seq": {
+        "rows": 87,
+        "in_truth": 17,
+        "precision": 0.1954
+      },
+      "lit|struct": {
+        "rows": 52,
+        "in_truth": 11,
+        "precision": 0.2115
+      }
+    },
+    "by_aspect": {
+      "C": {
+        "rows": 1151,
+        "precision": 0.4414
+      },
+      "F": {
+        "rows": 2384,
+        "precision": 0.081
+      },
+      "P": {
+        "rows": 6,
+        "precision": 0.1667
+      }
+    }
+  },
+  "vote2": {
+    "rows": 1315,
+    "by_source": {
+      "seq|struct": {
+        "rows": 1036,
+        "in_truth": 359,
+        "precision": 0.3465
+      },
+      "lit|seq": {
+        "rows": 121,
+        "in_truth": 19,
+        "precision": 0.157
+      },
+      "lit|seq|struct": {
+        "rows": 95,
+        "in_truth": 33,
+        "precision": 0.3474
+      },
+      "lit|struct": {
+        "rows": 63,
+        "in_truth": 11,
+        "precision": 0.1746
+      }
+    },
+    "by_aspect": {
+      "C": {
+        "rows": 381,
+        "precision": 0.7848
+      },
+      "F": {
+        "rows": 783,
+        "precision": 0.1469
+      },
+      "P": {
+        "rows": 151,
+        "precision": 0.053
+      }
+    }
+  }
+}

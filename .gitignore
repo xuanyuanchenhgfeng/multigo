@@ -1,0 +1,29 @@
+# 下载物、中间产物与大体积派生文件不入版本库。
+# 这些数据的来源（accession、版本、下载日期）在论文 1.6 节与补充表 S1 逐条给出，
+# 检索库、比对库与真值表可由 scripts/data_prep 相关脚本重建。
+/work/
+/cache/
+/数据集/
+/data/
+/tools/
+/backup_17lib_*/
+/logs/
+/.trae/
+__pycache__/
+*.pyc
+*.sqlite
+
+# results/ 只保留指标 JSON（正文每个数字的出处），派生的全量注释与审计流不入库
+/results/backup_mmseqs_localips/
+/results/demo_300/
+/results/legacy_eval/
+/results/revision_backup_*/
+/results/superseded_no_provenance/
+/results/*.gaf
+/results/*.tsv
+/results/*.jsonl
+/results/*.log
+
+# 本地配置备份与个人产物
+/config.yaml.bak*
+*.tmp

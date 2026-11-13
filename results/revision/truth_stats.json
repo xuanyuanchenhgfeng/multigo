@@ -1,0 +1,43 @@
+{
+  "protocol": "直接注释、13 种白名单证据码、/home/zsl/project/数据集/go-basic-2023-10-09.obo",
+  "go_terms": 47637,
+  "union_terms": {
+    "F": 3869,
+    "P": 4665,
+    "C": 847
+  },
+  "truth_proteins": {
+    "train|F": 13477,
+    "train|P": 13912,
+    "train|C": 15322,
+    "val|F": 2007,
+    "val|P": 256,
+    "val|C": 1416,
+    "test|F": 371,
+    "test|P": 184,
+    "test|C": 772
+  },
+  "truth_entries": {
+    "train|F": 21774,
+    "train|P": 31256,
+    "train|C": 25812,
+    "val|F": 2475,
+    "val|P": 459,
+    "val|C": 1767,
+    "test|F": 501,
+    "test|P": 290,
+    "test|C": 881
+  },
+  "dedup_proteins": {
+    "train": 25161,
+    "val": 3104,
+    "test": 1130
+  },
+  "fasta_counts": {
+    "train": 16948,
+    "val": 3122,
+    "test": 1159,
+    "ath_lib": 8505,
+    "ath_val": 3607
+  }
+}

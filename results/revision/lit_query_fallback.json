@@ -1,0 +1,38 @@
+{
+  "pub_date_cutoff": "2023/11/08",
+  "sets": {
+    "split2_val": {
+      "queries": 3122,
+      "gene_organism": 481,
+      "gene_only": 1786,
+      "protein_name": 644,
+      "no_hit": 211,
+      "no_meta": 0,
+      "with_hits": 2911,
+      "distinct_pmids": 28580,
+      "uncached_lookups": 0
+    },
+    "split3_test": {
+      "queries": 1159,
+      "gene_organism": 120,
+      "gene_only": 386,
+      "protein_name": 512,
+      "no_hit": 141,
+      "no_meta": 0,
+      "with_hits": 1018,
+      "distinct_pmids": 9285,
+      "uncached_lookups": 0
+    },
+    "arabidopsis": {
+      "queries": 3607,
+      "gene_organism": 0,
+      "gene_only": 2729,
+      "protein_name": 612,
+      "no_hit": 266,
+      "no_meta": 0,
+      "with_hits": 3341,
+      "distinct_pmids": 34178,
+      "uncached_lookups": 0
+    }
+  }
+}

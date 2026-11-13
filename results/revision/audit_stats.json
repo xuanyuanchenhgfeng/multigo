@@ -1,0 +1,102 @@
+{
+  "测试集·三通道融合": {
+    "proteins": 1088,
+    "with_output": 892,
+    "unknown": 196,
+    "same_merges": 804,
+    "parent_child_collapses": 1114,
+    "branch_conflicts": 14594,
+    "namespace_conflicts": 22257,
+    "illegal_terms": 0,
+    "branch_conflict_by_aspect": {
+      "P": 8790,
+      "C": 1627,
+      "F": 4177
+    }
+  },
+  "测试集·seq+struct": {
+    "proteins": 947,
+    "with_output": 889,
+    "unknown": 58,
+    "same_merges": 729,
+    "parent_child_collapses": 653,
+    "branch_conflicts": 6261,
+    "namespace_conflicts": 8791,
+    "illegal_terms": 0
+  },
+  "测试集·seq+lit": {
+    "proteins": 1053,
+    "with_output": 788,
+    "unknown": 265,
+    "same_merges": 49,
+    "parent_child_collapses": 791,
+    "branch_conflicts": 13294,
+    "namespace_conflicts": 19534,
+    "illegal_terms": 0
+  },
+  "测试集·seq-only": {
+    "proteins": 821,
+    "with_output": 788,
+    "unknown": 33,
+    "same_merges": 0,
+    "parent_child_collapses": 360,
+    "branch_conflicts": 5487,
+    "namespace_conflicts": 7159,
+    "illegal_terms": 0
+  },
+  "验证集·三通道融合": {
+    "proteins": 2948,
+    "with_output": 2481,
+    "unknown": 467,
+    "same_merges": 1560,
+    "parent_child_collapses": 4677,
+    "branch_conflicts": 50567,
+    "namespace_conflicts": 75976,
+    "illegal_terms": 0,
+    "branch_conflict_by_aspect": {
+      "F": 12454,
+      "P": 33414,
+      "C": 4699
+    }
+  },
+  "拟南芥·三通道融合": {
+    "proteins": 4022,
+    "with_output": 3224,
+    "unknown": 798,
+    "same_merges": 2205,
+    "parent_child_collapses": 9627,
+    "branch_conflicts": 155038,
+    "namespace_conflicts": 195214,
+    "illegal_terms": 0,
+    "branch_conflict_by_aspect": {
+      "P": 118523,
+      "C": 25829,
+      "F": 10686
+    }
+  },
+  "测试集·fusion17（17 库）": {
+    "proteins": 1090,
+    "with_output": 941,
+    "unknown": 149,
+    "same_merges": 1009,
+    "parent_child_collapses": 1302,
+    "branch_conflicts": 15886,
+    "namespace_conflicts": 24821,
+    "illegal_terms": 0
+  },
+  "真跨物种·三通道融合": {
+    "proteins": 3891,
+    "with_output": 2466,
+    "unknown": 1425,
+    "same_merges": 1246,
+    "parent_child_collapses": 5735,
+    "branch_conflicts": 84164,
+    "namespace_conflicts": 104987,
+    "illegal_terms": 0,
+    "branch_conflict_by_aspect": {
+      "P": 66795,
+      "F": 7648,
+      "C": 9721
+    }
+  }
+}

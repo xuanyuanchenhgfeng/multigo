@@ -1,0 +1,33 @@
+{
+  "n_truth_targets": 1130,
+  "n_query_proteins": 1159,
+  "seq_no_hit_targets": 322,
+  "multi": {
+    "raw_coverage": 0.7735,
+    "fmax_threshold": 0.42,
+    "covered_at_fmax": 583,
+    "mean_terms_per_protein_at_fmax": 1.08,
+    "mean_terms_among_covered": 2.1
+  },
+  "seq-only": {
+    "raw_coverage": 0.6876,
+    "fmax_threshold": 0.32,
+    "covered_at_fmax": 754,
+    "mean_terms_per_protein_at_fmax": 3.06,
+    "mean_terms_among_covered": 4.58
+  },
+  "seq+struct": {
+    "raw_coverage": 0.7708,
+    "fmax_threshold": 0.41,
+    "covered_at_fmax": 537,
+    "mean_terms_per_protein_at_fmax": 0.98,
+    "mean_terms_among_covered": 2.05
+  },
+  "seq+lit": {
+    "raw_coverage": 0.6876,
+    "fmax_threshold": 0.31,
+    "covered_at_fmax": 755,
+    "mean_terms_per_protein_at_fmax": 3.08,
+    "mean_terms_among_covered": 4.61
+  }
+}

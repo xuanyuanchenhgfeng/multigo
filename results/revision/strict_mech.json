@@ -1,0 +1,737 @@
+{
+  "config": "datecoded_pre_T0",
+  "T0": "2023-11-08",
+  "t_star": {
+    "fusion": 0.39,
+    "learn": 0.15
+  },
+  "feature_names": [
+    "seq_conf",
+    "struct_conf",
+    "lit_conf",
+    "n_src",
+    "seq_x_struct",
+    "seq_x_lit",
+    "struct_x_lit",
+    "ic_norm",
+    "log_prevalence",
+    "depth_norm",
+    "collapsed"
+  ],
+  "n_val_candidates": 21261,
+  "n_val_positives": 1656,
+  "lambda": {
+    "F": 10.0,
+    "P": 10.0,
+    "C": 10.0
+  },
+  "cv_logloss": {
+    "F": {
+      "0.0001": 0.4099,
+      "0.001": 0.40968,
+      "0.01": 0.40938,
+      "0.1": 0.40909,
+      "1": 0.40879,
+      "10": 0.40844
+    },
+    "P": {
+      "0.0001": 0.04242,
+      "0.001": 0.04242,
+      "0.01": 0.04242,
+      "0.1": 0.04242,
+      "1": 0.04241,
+      "10": 0.04241
+    },
+    "C": {
+      "0.0001": 0.35308,
+      "0.001": 0.3522,
+      "0.01": 0.35127,
+      "0.1": 0.35036,
+      "1": 0.34949,
+      "10": 0.34887
+    }
+  },
+  "oof_ece": {
+    "F": {
+      "ece": 0.0187,
+      "n_row": 6133,
+      "n_pos": 946,
+      "pos_rate": 0.1542
+    },
+    "P": {
+      "ece": 0.0002,
+      "n_row": 10762,
+      "n_pos": 79,
+      "pos_rate": 0.0073
+    },
+    "C": {
+      "ece": 0.0422,
+      "n_row": 4366,
+      "n_pos": 631,
+      "pos_rate": 0.1445
+    }
+  },
+  "coefficients": {
+    "F": {
+      "beta": [
+        -1.849,
+        -0.101,
+        -0.087,
+        -0.225,
+        0.25,
+        0.051,
+        0.144,
+        -0.052,
+        -0.212,
+        -0.68,
+        0.072,
+        -0.139
+      ],
+      "lambda": 10.0,
+      "b0": -1.849,
+      "w": {
+        "seq_conf": -0.101,
+        "struct_conf": -0.087,
+        "lit_conf": -0.225,
+        "n_src": 0.25,
+        "seq_x_struct": 0.051,
+        "seq_x_lit": 0.144,
+        "struct_x_lit": -0.052,
+        "ic_norm": -0.212,
+        "log_prevalence": -0.68,
+        "depth_norm": 0.072,
+        "collapsed": -0.139
+      }
+    },
+    "P": {
+      "beta": [
+        -5.068,
+        0.49,
+        -0.01,
+        0.084,
+        -0.006,
+        0.0,
+        0.098,
+        -0.01,
+        0.011,
+        0.003,
+        0.106,
+        0.14
+      ],
+      "lambda": 10.0,
+      "b0": -5.068,
+      "w": {
+        "seq_conf": 0.49,
+        "struct_conf": -0.01,
+        "lit_conf": 0.084,
+        "n_src": -0.006,
+        "seq_x_struct": 0.0,
+        "seq_x_lit": 0.098,
+        "struct_x_lit": -0.01,
+        "ic_norm": 0.011,
+        "log_prevalence": 0.003,
+        "depth_norm": 0.106,
+        "collapsed": 0.14
+      }
+    },
+    "C": {
+      "beta": [
+        -2.264,
+        0.42,
+        0.055,
+        0.245,
+        -0.027,
+        0.0,
+        0.094,
+        0.0,
+        0.179,
+        1.062,
+        -0.138,
+        -0.023
+      ],
+      "lambda": 10.0,
+      "b0": -2.264,
+      "w": {
+        "seq_conf": 0.42,
+        "struct_conf": 0.055,
+        "lit_conf": 0.245,
+        "n_src": -0.027,
+        "seq_x_struct": 0.0,
+        "seq_x_lit": 0.094,
+        "struct_x_lit": 0.0,
+        "ic_norm": 0.179,
+        "log_prevalence": 1.062,
+        "depth_norm": -0.138,
+        "collapsed": -0.023
+      }
+    }
+  },
+  "arms": {
+    "fusion": {
+      "pred_path": "/home/zsl/project/work/revision/preds/_strict/predictions_split3_test_multi.tsv",
+      "fmax": 0.3496,
+      "aupr": 0.2045,
+      "smin": 8.1703,
+      "auc": 0.6359,
+      "fmax_threshold": 0.32,
+      "distinct_terms_at_fmax": 2495,
+      "test_ece_on_propagated": 0.2467,
+      "test_ece_n_rows": 21294,
+      "test_reliability": [
+        {
+          "bin": "0.1-0.2",
+          "n": 52,
+          "mean_prob": 0.1768,
+          "empirical": 0.3269
+        },
+        {
+          "bin": "0.2-0.3",
+          "n": 523,
+          "mean_prob": 0.2606,
+          "empirical": 0.1453
+        },
+        {
+          "bin": "0.3-0.4",
+          "n": 457,
+          "mean_prob": 0.3458,
+          "empirical": 0.1072
+        },
+        {
+          "bin": "0.4-0.5",
+          "n": 20241,
+          "mean_prob": 0.4031,
+          "empirical": 0.1529
+        },
+        {
+          "bin": "0.5-0.6",
+          "n": 21,
+          "mean_prob": 0.5147,
+          "empirical": 0.0
+        }
+      ],
+      "auc_breakdown": {
+        "n_classes": 1127,
+        "n_classes_emitted": 792,
+        "macro_auc": 0.6359,
+        "macro_auc_emitted_only": 0.6934,
+        "n_classes_MFO": 478,
+        "auc_MFO": 0.6794,
+        "n_classes_BPO": 539,
+        "auc_BPO": 0.608,
+        "n_classes_CCO": 110,
+        "auc_CCO": 0.5838
+      },
+      "mean_terms_at_frozen_tstar": 27.202,
+      "n_covered_frozen": 747
+    },
+    "learn": {
+      "pred_path": "/home/zsl/project/work/revision/preds/_strict/predictions_split3_test_learn.tsv",
+      "fmax": 0.5323,
+      "aupr": 0.4278,
+      "smin": 7.6306,
+      "auc": 0.5969,
+      "fmax_threshold": 0.25,
+      "distinct_terms_at_fmax": 299,
+      "test_ece_on_propagated": 0.0811,
+      "test_ece_n_rows": 13250,
+      "test_reliability": [
+        {
+          "bin": "0.0-0.1",
+          "n": 2324,
+          "mean_prob": 0.0738,
+          "empirical": 0.0942
+        },
+        {
+          "bin": "0.1-0.2",
+          "n": 5746,
+          "mean_prob": 0.1498,
+          "empirical": 0.1681
+        },
+        {
+          "bin": "0.2-0.3",
+          "n": 3879,
+          "mean_prob": 0.2371,
+          "empirical": 0.1366
+        },
+        {
+          "bin": "0.3-0.4",
+          "n": 1248,
+          "mean_prob": 0.3715,
+          "empirical": 0.7925
+        },
+        {
+          "bin": "0.4-0.5",
+          "n": 13,
+          "mean_prob": 0.4193,
+          "empirical": 0.2308
+        },
+        {
+          "bin": "0.5-0.6",
+          "n": 15,
+          "mean_prob": 0.5517,
+          "empirical": 0.4
+        },
+        {
+          "bin": "0.7-0.8",
+          "n": 3,
+          "mean_prob": 0.7044,
+          "empirical": 0.6667
+        },
+        {
+          "bin": "0.9-1.0",
+          "n": 22,
+          "mean_prob": 0.9229,
+          "empirical": 1.0
+        }
+      ],
+      "auc_breakdown": {
+        "n_classes": 1127,
+        "n_classes_emitted": 469,
+        "macro_auc": 0.5969,
+        "macro_auc_emitted_only": 0.7328,
+        "n_classes_MFO": 478,
+        "auc_MFO": 0.707,
+        "n_classes_BPO": 539,
+        "auc_BPO": 0.4999,
+        "n_classes_CCO": 110,
+        "auc_CCO": 0.5934
+      },
+      "mean_terms_at_frozen_tstar": 10.083,
+      "n_covered_frozen": 820
+    }
+  },
+  "deploy": {
+    "fusion": {
+      "t_star": 0.39,
+      "P": 0.2617,
+      "R": 0.5169,
+      "F1": 0.3475,
+      "covered": 747
+    },
+    "learn": {
+      "t_star": 0.15,
+      "P": 0.3433,
+      "R": 0.4933,
+      "F1": 0.4048,
+      "covered": 820
+    }
+  },
+  "val_curve": {
+    "fusion": {
+      "t_star_argmax": 0.23,
+      "t_index_argmax": 23,
+      "val_F1_argmax": 0.3207,
+      "test_P_argmax": 0.2479,
+      "test_R_argmax": 0.5441,
+      "test_F1_argmax": 0.3406,
+      "test_covered_argmax": 767,
+      "t_star_one_se": 0.39,
+      "t_index_one_se": 39,
+      "val_F1_one_se": 0.3144,
+      "test_P_one_se": 0.2617,
+      "test_R_one_se": 0.5169,
+      "test_F1_one_se": 0.3475,
+      "test_covered_one_se": 747,
+      "val_F1_se": 0.00646,
+      "val_F1_curve_max": 0.3207,
+      "val_F1_curve": [
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3202,
+        0.3203,
+        0.3203,
+        0.3189,
+        0.3188,
+        0.3196,
+        0.3198,
+        0.3199,
+        0.3207,
+        0.3194,
+        0.3198,
+        0.3196,
+        0.3186,
+        0.3178,
+        0.3173,
+        0.3156,
+        0.3142,
+        0.3139,
+        0.3147,
+        0.3146,
+        0.314,
+        0.3135,
+        0.3138,
+        0.3149,
+        0.3144,
+        0.3141,
+        0.1357,
+        0.1354,
+        0.1354,
+        0.0502,
+        0.0502,
+        0.0241,
+        0.0106,
+        0.0103,
+        0.0058,
+        0.0046,
+        0.0034,
+        0.0021,
+        0.0022,
+        0.0022,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    "learn": {
+      "t_star_argmax": 0.13,
+      "t_index_argmax": 13,
+      "val_F1_argmax": 0.4433,
+      "test_P_argmax": 0.3365,
+      "test_R_argmax": 0.513,
+      "test_F1_argmax": 0.4064,
+      "test_covered_argmax": 863,
+      "t_star_one_se": 0.15,
+      "t_index_one_se": 15,
+      "val_F1_one_se": 0.439,
+      "test_P_one_se": 0.3433,
+      "test_R_one_se": 0.4933,
+      "test_F1_one_se": 0.4048,
+      "test_covered_one_se": 820,
+      "val_F1_se": 0.00601,
+      "val_F1_curve_max": 0.4433,
+      "val_F1_curve": [
+        0.4176,
+        0.4176,
+        0.4176,
+        0.4176,
+        0.4176,
+        0.4176,
+        0.4186,
+        0.422,
+        0.4262,
+        0.43,
+        0.4327,
+        0.4352,
+        0.4399,
+        0.4433,
+        0.4409,
+        0.439,
+        0.4298,
+        0.4133,
+        0.4001,
+        0.3849,
+        0.3674,
+        0.3544,
+        0.3342,
+        0.3235,
+        0.299,
+        0.2834,
+        0.2619,
+        0.245,
+        0.2324,
+        0.2129,
+        0.1953,
+        0.1849,
+        0.1768,
+        0.1657,
+        0.1563,
+        0.1441,
+        0.1385,
+        0.1352,
+        0.1328,
+        0.1301,
+        0.0194,
+        0.0174,
+        0.0151,
+        0.0151,
+        0.0135,
+        0.0115,
+        0.0032,
+        0.0032,
+        0.0025,
+        0.0021,
+        0.0016,
+        0.0009,
+        0.0009,
+        0.0009,
+        0.0009,
+        0.0009,
+        0.0009,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0006,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "common_coverage_subset": {
+    "n": 765,
+    "fusion": {
+      "fmax": 0.3956,
+      "aupr": 0.3047,
+      "smin": 7.4812,
+      "auc": 0.7139
+    },
+    "learn": {
+      "fmax": 0.68,
+      "aupr": 0.5941,
+      "smin": 6.7082,
+      "auc": 0.6386
+    }
+  },
+  "matched_emission_auc": {
+    "n_classes": 152,
+    "learn": 0.8142,
+    "fusion": 0.7787
+  },
+  "source_precision": {
+    "fusion": {
+      "rows": 3644,
+      "by_source": {
+        "seq": {
+          "rows": 3424,
+          "in_truth": 567,
+          "precision": 0.1656
+        },
+        "lit|seq": {
+          "rows": 210,
+          "in_truth": 51,
+          "precision": 0.2429
+        },
+        "seq|struct": {
+          "rows": 9,
+          "in_truth": 8,
+          "precision": 0.8889
+        },
+        "lit|seq|struct": {
+          "rows": 1,
+          "in_truth": 0,
+          "precision": 0.0
+        }
+      },
+      "by_aspect": {
+        "C": {
+          "rows": 769,
+          "precision": 0.5852
+        },
+        "F": {
+          "rows": 1823,
+          "precision": 0.0752
+        },
+        "P": {
+          "rows": 1052,
+          "precision": 0.0371
+        }
+      }
+    },
+    "learn": {
+      "rows": 3408,
+      "by_source": {
+        "seq": {
+          "rows": 2462,
+          "in_truth": 553,
+          "precision": 0.2246
+        },
+        "lit": {
+          "rows": 759,
+          "in_truth": 39,
+          "precision": 0.0514
+        },
+        "lit|seq": {
+          "rows": 172,
+          "in_truth": 50,
+          "precision": 0.2907
+        },
+        "seq|struct": {
+          "rows": 9,
+          "in_truth": 8,
+          "precision": 0.8889
+        },
+        "struct": {
+          "rows": 3,
+          "in_truth": 3,
+          "precision": 1.0
+        },
+        "lit|struct": {
+          "rows": 2,
+          "in_truth": 0,
+          "precision": 0.0
+        },
+        "lit|seq|struct": {
+          "rows": 1,
+          "in_truth": 0,
+          "precision": 0.0
+        }
+      },
+      "by_aspect": {
+        "C": {
+          "rows": 1098,
+          "precision": 0.4372
+        },
+        "F": {
+          "rows": 2306,
+          "precision": 0.075
+        },
+        "P": {
+          "rows": 4,
+          "precision": 0.0
+        }
+      }
+    },
+    "learn_nolitonly": {
+      "rows": 2649,
+      "by_source": {
+        "seq": {
+          "rows": 2462,
+          "in_truth": 553,
+          "precision": 0.2246
+        },
+        "lit|seq": {
+          "rows": 172,
+          "in_truth": 50,
+          "precision": 0.2907
+        },
+        "seq|struct": {
+          "rows": 9,
+          "in_truth": 8,
+          "precision": 0.8889
+        },
+        "struct": {
+          "rows": 3,
+          "in_truth": 3,
+          "precision": 1.0
+        },
+        "lit|struct": {
+          "rows": 2,
+          "in_truth": 0,
+          "precision": 0.0
+        },
+        "lit|seq|struct": {
+          "rows": 1,
+          "in_truth": 0,
+          "precision": 0.0
+        }
+      },
+      "by_aspect": {
+        "C": {
+          "rows": 765,
+          "precision": 0.6105
+        },
+        "F": {
+          "rows": 1880,
+          "precision": 0.0782
+        },
+        "P": {
+          "rows": 4,
+          "precision": 0.0
+        }
+      }
+    }
+  },
+  "lit_only_rows_by_aspect": {
+    "C": {
+      "rows": 333,
+      "precision": 0.039
+    },
+    "F": {
+      "rows": 426,
+      "precision": 0.061
+    }
+  }
+}

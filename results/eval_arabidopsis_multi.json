@@ -1,0 +1,84 @@
+{
+  "label": "arabidopsis-multchannel(3)",
+  "protocol": "PSB26 / CAFA: Fmax, Smin, AUPR, AUC",
+  "n_targets": 3607,
+  "n_predicted_proteins": 3190,
+  "fmax": 0.4451,
+  "smin": 30.427,
+  "aupr": 0.238,
+  "auc": 0.6605,
+  "auc_n_classes": 5146,
+  "coverage": 0.7921,
+  "fmax_detail": {
+    "threshold": 0.17,
+    "precision": 0.407412432413115,
+    "recall": 0.49054577309367
+  },
+  "smin_detail": {
+    "threshold": 0.41,
+    "ru": 29.692,
+    "mi": 6.6473
+  },
+  "by_aspect": {
+    "F": {
+      "ontology": "MFO",
+      "fmax": 0.5985,
+      "smin": 6.3004,
+      "aupr": 0.3987,
+      "auc": 0.7412,
+      "auc_n_classes": 1573,
+      "coverage": 0.723,
+      "n_targets": 2368,
+      "fmax_detail": {
+        "threshold": 0.0,
+        "precision": 0.6262383327557193,
+        "recall": 0.5730596971761507
+      },
+      "smin_detail": {
+        "threshold": 0.4,
+        "ru": 4.789,
+        "mi": 4.0939
+      }
+    },
+    "P": {
+      "ontology": "BPO",
+      "fmax": 0.4342,
+      "smin": 25.1326,
+      "aupr": 0.2155,
+      "auc": 0.6236,
+      "auc_n_classes": 3152,
+      "coverage": 0.7133,
+      "n_targets": 2567,
+      "fmax_detail": {
+        "threshold": 0.17,
+        "precision": 0.443302085242333,
+        "recall": 0.42555186830992636
+      },
+      "smin_detail": {
+        "threshold": 0.41,
+        "ru": 24.9191,
+        "mi": 3.2689
+      }
+    },
+    "C": {
+      "ontology": "CCO",
+      "fmax": 0.5725,
+      "smin": 9.7904,
+      "aupr": 0.3494,
+      "auc": 0.6353,
+      "auc_n_classes": 421,
+      "coverage": 0.6684,
+      "n_targets": 2642,
+      "fmax_detail": {
+        "threshold": 0.0,
+        "precision": 0.6395719605288258,
+        "recall": 0.5181540322434041
+      },
+      "smin_detail": {
+        "threshold": 0.4,
+        "ru": 7.2843,
+        "mi": 6.5415
+      }
+    }
+  }
+}

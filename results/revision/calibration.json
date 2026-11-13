@@ -1,0 +1,42 @@
+{
+  "overall": {
+    "t_star": 0.42,
+    "val_F1_at_tstar": 0.3354,
+    "test_fixed_P": 0.5274,
+    "test_fixed_R": 0.366,
+    "test_fixed_F1": 0.4321,
+    "test_fixed_covered": 583.0,
+    "test_oracle_Fmax": 0.4321,
+    "test_oracle_t": 0.42
+  },
+  "MFO": {
+    "t_star": 0.17,
+    "val_F1_at_tstar": 0.5924,
+    "test_fixed_P": 0.4925,
+    "test_fixed_R": 0.5943,
+    "test_fixed_F1": 0.5386,
+    "test_fixed_covered": 271.0,
+    "test_oracle_Fmax": 0.5416,
+    "test_oracle_t": 0.21
+  },
+  "BPO": {
+    "t_star": 0.0,
+    "val_F1_at_tstar": 0.3851,
+    "test_fixed_P": 0.3099,
+    "test_fixed_R": 0.308,
+    "test_fixed_F1": 0.3089,
+    "test_fixed_covered": 108.0,
+    "test_oracle_Fmax": 0.3091,
+    "test_oracle_t": 0.17
+  },
+  "CCO": {
+    "t_star": 0.0,
+    "val_F1_at_tstar": 0.5372,
+    "test_fixed_P": 0.8585,
+    "test_fixed_R": 0.6445,
+    "test_fixed_F1": 0.7362,
+    "test_fixed_covered": 545.0,
+    "test_oracle_Fmax": 0.7362,
+    "test_oracle_t": 0.15
+  }
+}

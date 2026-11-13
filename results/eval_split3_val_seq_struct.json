@@ -1,0 +1,79 @@
+{
+  "label": "split3_val-seq+struct",
+  "n_targets": 7471,
+  "n_predicted_proteins": 6286,
+  "fmax": 0.0546,
+  "fmax_detail": {
+    "threshold": 0.157,
+    "precision": 0.029292647872192993,
+    "recall": 0.4015612041355707
+  },
+  "aupr": 0.1031,
+  "aupr_detail": {
+    "total_true_pairs": 109414,
+    "total_prediction_pairs": 279224,
+    "pr_points": [
+      {
+        "k": 1,
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      {
+        "k": 10,
+        "precision": 0.2,
+        "recall": 0.0
+      },
+      {
+        "k": 50,
+        "precision": 0.26,
+        "recall": 0.0001
+      },
+      {
+        "k": 100,
+        "precision": 0.18,
+        "recall": 0.0002
+      },
+      {
+        "k": 500,
+        "precision": 0.202,
+        "recall": 0.0009
+      },
+      {
+        "k": 1000,
+        "precision": 0.155,
+        "recall": 0.0014
+      },
+      {
+        "k": 5000,
+        "precision": 0.1778,
+        "recall": 0.0081
+      },
+      {
+        "k": 279224,
+        "precision": 0.2075,
+        "recall": 0.5295
+      }
+    ]
+  },
+  "coverage": 0.8411,
+  "by_aspect": {
+    "F": {
+      "fmax": 0.1083,
+      "aupr": 0.3184,
+      "coverage": 0.8509,
+      "n_targets": 4011
+    },
+    "P": {
+      "fmax": 0.0387,
+      "aupr": 0.1412,
+      "coverage": 0.7463,
+      "n_targets": 1431
+    },
+    "C": {
+      "fmax": 0.1586,
+      "aupr": 0.2654,
+      "coverage": 0.7217,
+      "n_targets": 4980
+    }
+  }
+}

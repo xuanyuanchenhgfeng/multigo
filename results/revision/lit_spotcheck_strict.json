@@ -1,0 +1,82 @@
+{
+  "T0": "2023/11/08",
+  "config": "strict",
+  "column_semantics_note": "lit_channel_*.tsv 第4列 pmids 存的是 match_gos 的文本序号，PMID 由 cache/pubmed_cache.sqlite 按检索式复原（复原率见 recovery.n_rows/n_rows_all）",
+  "recovery": {
+    "n_rows_all": 3736,
+    "n_rows_resolved": 3736
+  },
+  "all_lit_rows": {
+    "n": 3736,
+    "title_hit": 0.1654,
+    "gene_in_sentence": 0.2631,
+    "both": 0.3616,
+    "truth_hit": 0.0388
+  },
+  "by_citations": {
+    ">=1": {
+      "n": 3736,
+      "title_hit": 0.1654,
+      "gene_in_sentence": 0.2631,
+      "both": 0.3616,
+      "truth_hit": 0.0388
+    },
+    ">=2": {
+      "n": 664,
+      "title_hit": 0.3524,
+      "gene_in_sentence": 0.488,
+      "both": 0.6476,
+      "truth_hit": 0.0708
+    },
+    ">=3": {
+      "n": 268,
+      "title_hit": 0.4216,
+      "gene_in_sentence": 0.597,
+      "both": 0.7276,
+      "truth_hit": 0.0709
+    }
+  },
+  "by_aspect": {
+    "F": {
+      "n": 578,
+      "title_hit": 0.0917,
+      "gene_in_sentence": 0.2924,
+      "both": 0.346,
+      "truth_hit": 0.1574
+    },
+    "P": {
+      "n": 2227,
+      "title_hit": 0.1837,
+      "gene_in_sentence": 0.2416,
+      "both": 0.3543,
+      "truth_hit": 0.0058
+    },
+    "C": {
+      "n": 931,
+      "title_hit": 0.1676,
+      "gene_in_sentence": 0.2965,
+      "both": 0.3888,
+      "truth_hit": 0.044
+    }
+  },
+  "emitted_by_learn": {
+    "n": 816,
+    "title_hit": 0.114,
+    "gene_in_sentence": 0.2966,
+    "both": 0.3701,
+    "truth_hit": 0.065
+  },
+  "lit_only_emitted_by_learn": {
+    "n": 759,
+    "title_hit": 0.1094,
+    "gene_in_sentence": 0.2951,
+    "both": 0.3663,
+    "truth_hit": 0.0514
+  },
+  "lit_only_emitted_by_fusion": {
+    "n": 0
+  },
+  "lit_only_truth_hit_note": "lit-only 行的 truth_hit 即文献通道的独立精度，与仲裁权重无关；样本量小于 30 时只作定性参考",
+  "sample_n": 60,
+  "sample_file": "work/revision/lit_spotcheck_sample_strict.tsv"
+}

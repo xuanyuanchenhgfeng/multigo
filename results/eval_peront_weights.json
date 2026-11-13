@@ -1,0 +1,84 @@
+{
+  "label": "peront-weights",
+  "protocol": "PSB26 / CAFA: Fmax, Smin, AUPR, AUC",
+  "n_targets": 1159,
+  "n_predicted_proteins": 902,
+  "fmax": 0.4533,
+  "smin": 8.5211,
+  "aupr": 0.1776,
+  "auc": 0.6536,
+  "auc_n_classes": 1077,
+  "coverage": 0.7783,
+  "fmax_detail": {
+    "threshold": 0.16,
+    "precision": 0.3982626214365534,
+    "recall": 0.5259990557129212
+  },
+  "smin_detail": {
+    "threshold": 0.63,
+    "ru": 8.0807,
+    "mi": 2.704
+  },
+  "by_aspect": {
+    "F": {
+      "ontology": "MFO",
+      "fmax": 0.544,
+      "smin": 8.8988,
+      "aupr": 0.3858,
+      "auc": 0.7148,
+      "auc_n_classes": 493,
+      "coverage": 0.7627,
+      "n_targets": 375,
+      "fmax_detail": {
+        "threshold": 0.0,
+        "precision": 0.4918718668873955,
+        "recall": 0.6084152615216558
+      },
+      "smin_detail": {
+        "threshold": 0.52,
+        "ru": 7.9334,
+        "mi": 4.031
+      }
+    },
+    "P": {
+      "ontology": "BPO",
+      "fmax": 0.2327,
+      "smin": 14.7108,
+      "aupr": 0.0602,
+      "auc": 0.6058,
+      "auc_n_classes": 473,
+      "coverage": 0.5328,
+      "n_targets": 229,
+      "fmax_detail": {
+        "threshold": 0.0,
+        "precision": 0.23103872924658905,
+        "recall": 0.23445089844378852
+      },
+      "smin_detail": {
+        "threshold": 0.36,
+        "ru": 14.5635,
+        "mi": 2.0766
+      }
+    },
+    "C": {
+      "ontology": "CCO",
+      "fmax": 0.7064,
+      "smin": 2.7021,
+      "aupr": 0.5426,
+      "auc": 0.5853,
+      "auc_n_classes": 111,
+      "coverage": 0.6878,
+      "n_targets": 772,
+      "fmax_detail": {
+        "threshold": 0.0,
+        "precision": 0.8026659699970313,
+        "recall": 0.6307091953264997
+      },
+      "smin_detail": {
+        "threshold": 0.29,
+        "ru": 2.5837,
+        "mi": 0.7911
+      }
+    }
+  }
+}
