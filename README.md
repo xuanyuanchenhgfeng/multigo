@@ -10,6 +10,12 @@
 论文、补充材料与交付产物在 `../Materials/`：正文 `论文/manuscript.md`（及 `manuscript.docx`）、
 补充表 `补充材料/supplementary.md`、数据交付包 `数据/`、代码快照 `代码/`。本目录是产生这些
 数字的工程现场，两者的协议参数必须一致；本文以下所有数字取自 `results/revision/*.json`。
+`../Materials/` 这个相对路径只在作者的本地工程目录里成立：克隆本仓库时不会带上稿件与补充材料，
+它们随投稿系统提交；仓库内的代码、配置与 `results/` 指标 JSON 已足以重算并机检正文的每个数字
+（`python3 scripts/check_manuscript_numbers.py`，只读核对，全部一致时退出码 0）。
+原始下载物（UniProt、GO、GOA、TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、
+全量注释表与逐蛋白审计流不入版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
+本仓库以 MIT 许可发布，见 `LICENSE`。
 
 ---
 
