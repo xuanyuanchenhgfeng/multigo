@@ -281,7 +281,15 @@ def fig4_dag():
 
 
 if __name__ == "__main__":
-    fig1_pr()
+    # supp_fig1 要现算 PR 曲线，依赖三样重建产物（不入版本库）；其余三张只读入库 JSON
+    need = [PROJ / CFG["paths"]["go_obo"],
+            PRED_REV / "predictions_split3_test_multi.tsv",
+            PROJ / "data" / "annotations" / "split3_go.tsv"]
+    missing = [str(p) for p in need if not p.is_file()]
+    if missing:
+        print("跳过 supp_fig1，缺少：", *missing, sep="\n  ")
+    else:
+        fig1_pr()
     fig2_weights()
     fig3_arabidopsis()
     fig4_dag()

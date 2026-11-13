@@ -15,7 +15,9 @@
 只读 `results/revision/*.json` 与 `work/revision/lit_spotcheck_sample_strict.tsv`，重渲染出正文
 表 2–6 与全部补充表的数值（437 行），可与稿件逐格对照；`scripts/check_manuscript_numbers.py`
 做的是同一件事的自动逐字比对，但它要读稿件文本，在作者本地工程目录里直接跑，公开克隆需按
-提示用 `MULTIGO_MANUSCRIPT` 指向随稿提交的 `manuscript.md`。原始下载物（UniProt、GO、GOA、
+提示用 `MULTIGO_MANUSCRIPT` 指向随稿提交的 `manuscript.md`。`figures/` 下的绘图脚本同样不重算
+指标，纯净克隆里重绘的图 1–图 4 与补充图 S2–S4 共七个 PNG 与随稿提交的那批逐字节相同
+（md5 核对，见 §8）。原始下载物（UniProt、GO、GOA、
 TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、全量注释表与逐蛋白审计流不入
 版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
 本仓库以 MIT 许可发布，见 `LICENSE`。投稿快照打为标签 `v1.0`，87 MB 的通道输出与苦荞全蛋白组
@@ -138,6 +140,7 @@ project/
 │                                  #   source_precision / struct_library_audit / lit_spotcheck /
 │                                  #   power_analysis / operating_point）；另有一份被
 │                                  #   audit_stats.json 取代的旧冲突统计，已改名留档
+├── figures/                       # 正文图 1–图 4 与补充图 S2–S5 的渲染脚本（见 §8 末）
 ├── work/                          # 通道中间产物、仲裁预测 TSV、审计日志
 ├── cache/pubmed_cache.sqlite      # PubMed 检索与摘要缓存，557 MB
 └── config_revision.yaml           # 修订版协议配置（正文数字全部出自这套配置）
@@ -151,7 +154,7 @@ project/
 | 项 | 版本 | 说明 |
 |---|---|---|
 | 系统 | Linux x86_64，内核 6.8.0-124-generic | |
-| Python | 3.12.3 | 依赖 PyYAML、requests；§8.2 的第二轮脚本另需 numpy（学习式仲裁与重采样用，求解器为 numpy 自带的线性代数，不引入 sklearn） |
+| Python | 3.12.3 | `pip install -r requirements.txt` 装齐四个第三方依赖（PyYAML、requests、numpy、matplotlib，作者实测版本逐条钉在该文件里）；学习式仲裁与重采样只用 numpy 自带的线性代数，不引入 sklearn |
 | DIAMOND | 2.1.10 | `/home/zsl/tools/diamond/diamond` |
 | InterProScan | 5.72-103.0 | 本机 `local` 模式部署 |
 | Java | OpenJDK 11.0.2 | 每进程 12 GB 堆、4 线程 |
@@ -178,6 +181,14 @@ env -u LD_LIBRARY_PATH python3 -X utf8 scripts/run_train_val.py --config config_
 `revision_17lib.py`。步骤 1–2 不访问任何公开数据库；文献通道只在缓存未命中时才发请求。
 学习式仲裁路线（§8.2）在这四步之后跑 `scripts/revision_learning.py`，第二轮的其余四项分析
 或直接读它写出的预测文件，或复用它的指标与工作点函数。
+
+图不重算任何指标，只把 `results/revision/*.json` 画出来：`FIG_CONFIG=strict
+python3 figures/make_figures.py`（图 1–3）、`figures/make_fig4_operating.py`（图 4）与
+`figures/make_supp_figs.py`（补充图 S2–S4）只读入库的 JSON，在纯净克隆里重绘出的七个 PNG
+与随稿提交的那批逐字节相同（md5 核对）；补充图 S1 与图 5（补充图 S5）要现算 PR 曲线，
+另需 `数据集/go-basic-2023-10-09.obo` 和 `work/revision/preds/`，属步骤 1–2 的重建产物
+或 Release 附件内容，脚本缺这些输入时打印所缺路径并跳过其余部分。输出目录默认是脚本所在
+目录，`MULTIGO_FIG_OUT` 可指到随稿的 figures/。
 
 ---
 

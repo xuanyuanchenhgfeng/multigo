@@ -643,5 +643,12 @@ def _eval_context():
 FIGNO = {"1": fig1, "2": fig2, "3": fig3, "5": fig5}
 _sel = [a for a in sys.argv[1:] if a in FIGNO]
 for k in (_sel or ["1", "2", "3", "5"]):
+    # 图 5 要现算分本体 PR 曲线，依赖本体与逐蛋白预测这两样重建产物
+    need = [PROJ / CFG["paths"]["go_obo"],
+            PRED / "predictions_split3_test_multi.tsv"]
+    missing = [str(p) for p in need if not p.is_file()]
+    if k == "5" and missing:
+        print("跳过图 5，缺少：", *missing, sep="\n  ")
+        continue
     FIGNO[k]()
 print("完成 ->", OUT)
