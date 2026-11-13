@@ -27,3 +27,12 @@ __pycache__/
 # 本地配置备份与个人产物
 /config.yaml.bak*
 *.tmp
+
+# 例外：文献通道的抽检样本表（25 KB）入库。它是表 5 上半逐条精度的原始依据，
+# 也是 scripts/make_supplementary_tables.py 在纯净克隆里跑完所需的唯一 work/ 输入。
+!/work/
+/work/*
+!/work/revision/
+/work/revision/*
+!/work/revision/lit_spotcheck_sample_strict.tsv
+!/work/revision/lit_spotcheck_sample.tsv

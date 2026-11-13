@@ -11,10 +11,13 @@
 补充表 `补充材料/supplementary.md`、数据交付包 `数据/`、代码快照 `代码/`。本目录是产生这些
 数字的工程现场，两者的协议参数必须一致；本文以下所有数字取自 `results/revision/*.json`。
 `../Materials/` 这个相对路径只在作者的本地工程目录里成立：克隆本仓库时不会带上稿件与补充材料，
-它们随投稿系统提交；仓库内的代码、配置与 `results/` 指标 JSON 已足以重算并机检正文的每个数字
-（`python3 scripts/check_manuscript_numbers.py`，只读核对，全部一致时退出码 0）。
-原始下载物（UniProt、GO、GOA、TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、
-全量注释表与逐蛋白审计流不入版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
+它们随投稿系统提交。克隆下来能独立做到的是——`python3 scripts/make_supplementary_tables.py`
+只读 `results/revision/*.json` 与 `work/revision/lit_spotcheck_sample_strict.tsv`，重渲染出正文
+表 2–6 与全部补充表的数值（437 行），可与稿件逐格对照；`scripts/check_manuscript_numbers.py`
+做的是同一件事的自动逐字比对，但它要读稿件文本，在作者本地工程目录里直接跑，公开克隆需按
+提示用 `MULTIGO_MANUSCRIPT` 指向随稿提交的 `manuscript.md`。原始下载物（UniProt、GO、GOA、
+TAIR、NCBI 与 CNCB-NGDC GWH 的 Pinku1 蛋白组）、比对库索引、全量注释表与逐蛋白审计流不入
+版本库，来源与版本逐项见补充表 S1，重建命令见 §8 与补充说明 S7。
 本仓库以 MIT 许可发布，见 `LICENSE`。投稿快照打为标签 `v1.0`，87 MB 的通道输出与苦荞全蛋白组
 注释以该标签的 Release 附件 `multigo_data_v1.0.tar.gz`（8.5 MB，SHA-256 见 Release 说明）提供。
 仓库地址：https://github.com/xuanyuanchenhgfeng/multigo
